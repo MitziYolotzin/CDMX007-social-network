@@ -7,7 +7,7 @@ const buttonAccess = document.getElementById('access');
  
 
 
-//FUNCION REGISTRAR USUARIO
+//REGISTRAR NUEVO USUARIO
 buttonRegister.addEventListener('click', () => {
 
 let email = document.getElementById('email').value;
@@ -29,7 +29,7 @@ firebase.auth().createUserWithEmailAndPassword(email, pass).then((res)=>{
 
 });
 
-//FUNCION INGRESA USUARIO
+//INICIAR SESION
 buttonAccess.addEventListener('click', () => {
 
     let emailAc = document.getElementById('email-ac').value;
@@ -78,7 +78,7 @@ const verify = () => {
     //verify();
 
 
-//SALIR
+//SALIR DE LA SESION
 const buttonLogout = document.getElementById('logout');
 
 const viewUserInfo = () => {
@@ -92,8 +92,7 @@ const viewUserInfo = () => {
 
     }
 
-    
-
+//FUNCION CERRAR SESION
 const closeSession = () => {
 
     firebase.auth().signOut()
