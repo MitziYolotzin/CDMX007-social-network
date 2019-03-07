@@ -1,39 +1,43 @@
 //REGISTRO
-const register = document.getElementById('register');
+const buttonRegister = document.getElementById('register');
 
 //INGRESO
-const acces = document.getElementById('access');
+const buttonAccess = document.getElementById('access');
 
  
 
 
 //FUNCION REGISTRAR USUARIO
-register.addEventListener('click', () => {
+buttonRegister.addEventListener('click', () => {
 
 let email = document.getElementById('email').value;
 let pass = document.getElementById('pass').value;
 
-firebase.auth().createUserWithEmailAndPassword(email, pass)
+firebase.auth().createUserWithEmailAndPassword(email, pass).then((res)=>{
+  console.log(res)
+})
 .catch(function(error) {
     // Handle Errors here.
     var errorCode = error.code;
     var errorMessage = error.message;
     // ...
 
-// console.log(errorCode);
-// console.log(errorMessage);
+  console.log(errorCode);
+  console.log(errorMessage);
 
   });
 
 });
 
 //FUNCION INGRESA USUARIO
-access.addEventListener('click', () => {
+buttonAccess.addEventListener('click', () => {
 
     let emailAc = document.getElementById('email-ac').value;
     let passAc = document.getElementById('pass-ac').value;
     
-    firebase.auth().createUserWithEmailAndPassword(emailAc, passAc)
+    firebase.auth().signInWithEmailAndPassword(emailAc, passAc).then((res)=>{
+      console.log(res);
+    })
     .catch(function(error) {
         // Handle Errors here.
         var errorCode = error.code;
@@ -48,7 +52,7 @@ access.addEventListener('click', () => {
     });
 
 //VERIFICAR USUARIO
-    const verify = () => {
+const verify = () => {
 
     firebase.auth().onAuthStateChanged(function(user) {
         if (user) {
@@ -75,24 +79,36 @@ access.addEventListener('click', () => {
 
 
 //SALIR
-const logout = document.getElementById('logout');
+const buttonLogout = document.getElementById('logout');
 
-    const viewUserInfo = () => {
+const viewUserInfo = () => {
  let content = document.getElementById('user-data');
- content.innerHTML = "Mostrar al usuario activo";
+
+ buttonLogout.addEventListener('click', () => {
+  closeSession();
+    content.innerHTML = `<p>Su sesión se ha cerrado</p>`;
+  
+  });
 
     }
+
+    
 
 const closeSession = () => {
 
     firebase.auth().signOut()
+
     .then(function(){
+console.log('Cerrando sesión');
 
     })
-    .catch(function(erro){
-        
+
+    .catch(function(error){
+     console.log(error);   
     } )
 }
+
+
 
 
 
