@@ -4,6 +4,9 @@ const register = document.getElementById('register');
 //INGRESO
 const acces = document.getElementById('access');
 
+ 
+
+
 //FUNCION REGISTRAR USUARIO
 register.addEventListener('click', () => {
 
@@ -68,9 +71,11 @@ access.addEventListener('click', () => {
       });
     }
       
-    verify();
+    //verify();
 
 
+//SALIR
+const logout = document.getElementById('logout');
 
     const viewUserInfo = () => {
  let content = document.getElementById('user-data');
@@ -78,7 +83,16 @@ access.addEventListener('click', () => {
 
     }
 
+const closeSession = () => {
 
+    firebase.auth().signOut()
+    .then(function(){
+
+    })
+    .catch(function(erro){
+        
+    } )
+}
 
 
 
