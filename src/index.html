@@ -1,18 +1,40 @@
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>NETWORKING</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>NETWORKING</title>
+  <h1>hello world</h1>
+
+  <script src="https://www.gstatic.com/firebasejs/5.8.5/firebase.js"></script>
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyAZ6AIpcGGXrXCNftTeNQ7XlarJ2V64Pfs",
+      authDomain: "contact-net-2409e.firebaseapp.com",
+      databaseURL: "https://contact-net-2409e.firebaseio.com",
+      projectId: "contact-net-2409e",
+      storageBucket: "",
+      messagingSenderId: "603524292683"
+    };
+    firebase.initializeApp(config);
+
+ 
+  </script>
 </head>
+
 <body>
-    
+    <input id = "email" type = "email" placeholder="type your email adress">
+    <input id = "passcode" type = "password" placeholder="create a password">
+    <button id = "registration">login</button>
 
 
-    <script src="data.js"></script>
-    <script src="main.js"></script>
-    
+
+  <script src="data.js"></script>
+  <script src="main.js"></script>
+
 </body>
+
 </html>
