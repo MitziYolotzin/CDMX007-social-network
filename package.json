@@ -1,0 +1,30 @@
+{
+  "name": "social-network",
+  "version": "1.0.0",
+  "description": "social-network",
+  "main": "main.js",
+  "scripts": {
+    "htmlhint": "htmlhint src/*.html test/*.html",
+    "eslint": "eslint --ext .js src/ test/",
+    "pretest": "npm run eslint && npm run htmlhint",
+    "test": "jest --coverage",
+    "postshrinkwrap": "json -I -e \"this.myMetadata = $MY_APP_METADATA\""
+  },
+  "dependencies": {
+    "eslint": "^5.9.0",
+    "eslint-plugin-jest": "^22.1.2",
+    "handlebars": "^4.1.0",
+    "htmlhint": "^0.11.0",
+    "jest": "^24.1.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MitziYolotzin/CDMX007-social-network.git"
+  },
+  "author": "Lupita Abby Mitzi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MitziYolotzin/CDMX007-social-network/issues"
+  },
+  "homepage": "https://github.com/MitziYolotzin/CDMX007-social-network#readme"
+}
