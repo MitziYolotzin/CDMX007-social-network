@@ -1,0 +1,36 @@
+
+@media (min-width: 320px) and (max-width: 480px){ /*mobile*/
+.fondo{
+background-image: url('https://images.unsplash.com/photo-1523580494863-6f3031224c94?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80');
+width: 100%;
+height: -webkit-fill-available;
+background-size: cover;
+background-repeat: no-repeat;
+
+}
+#register{
+background: transparent;
+padding: 10px;
+width: 250px;
+font-size: 16px;
+font-family: 'Montserrat', sans-serif;
+color: white;
+border-radius: 12px;
+border-color: white;
+}
+#logIn{
+background-color: white;
+color: blue;
+}
+/*estilos para la pagina de login*/ 
+
+.login{
+    background-color: red;
+    }
+
+.registration{
+background-color: green;
+}
+
+}
+
