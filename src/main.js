@@ -1,17 +1,18 @@
 //REGISTRO
 const buttonRegister = document.getElementById('register');
-
-//INGRESO
 const buttonAccess = document.getElementById('access');
+const buttonLogin = document.getElementById('login');
 
  
+//buttonRegister.addEventListener('click', () => {
+//location.href= "register.html"
+//});
+//buttonLogin.addEventListener(click , () => {
+//location.href = "login.html"
+//});
 
 
 //FUNCION REGISTRAR USUARIO
-
-
-
-
 //FUNCION INGRESA USUARIO
 //buttonAccess.addEventListener('click', () => {
 
@@ -22,17 +23,16 @@ const buttonAccess = document.getElementById('access');
       //console.log(res);
     //})
     //.catch(function(error) {
-        // Handle Errors here.
-        //var errorCode = error.code;
-        //var errorMessage = error.message;
-        // ...
+    
+      //var errorCode = error.code;
+      //var errorMessage = error.message;
+    
     
     //console.log(errorCode);
     //console.log(errorMessage);
     
-      //});
-    
     //});
+    
 
 //VERIFICAR USUARIO
 const verify = () => {

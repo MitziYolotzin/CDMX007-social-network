@@ -1,13 +1,15 @@
-import login        from './views/pages/login.js'
-import register     from './views/pages/register.js'
+// import Register from "./views/pages/Register.js";
 
 
 const routes = {
-'/login'      : login
-'/register'   : register
-
+'/Register' : window.Register.after_render()
 }; 
+    
+
+    
 
 
 
-window.addEventListener('hashchange', router);
+
+
+window.addEventListener('hashchange', routes);
