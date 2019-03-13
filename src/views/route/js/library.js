@@ -16,16 +16,24 @@
           element = document.getElementById(id);
           return this;
         },
+        get: function(id){
+        return document.getElementById(id)
+        },
         noSubmit: function () {
           element.addEventListener('submit', function (e) {
             e.preventDefault();
           }, false);
           return this;
         },
-        newControler: function(name, ctrl){
+        controler: function(name, ctrl){
         controler [name] = {'controler': ctrl};
 
         },
+
+        getCtrl: function(){
+        return ctrlFirst;
+        },
+
         routes: function () {
           marco = element;
           return this;
@@ -46,10 +54,15 @@
           xhr = new XMLHttpRequest();
           if (destination && destination.page) {
               if(destination.controler){
-               ctrlFirst = destination.controler
+               ctrlFirst = [destination.controler].controler;
               }
             xhr.addEventListener('load', function () {
               marco.innerHTML = this.responseText;
+              setTimeout(function(){
+                if(typeof(destination.load) === 'function'){
+                    destination.load();
+                      } 
+              },500);
             }, false);
             xhr.open('get', destination.page, true);
             xhr.send(null);
