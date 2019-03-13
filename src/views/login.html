@@ -1,94 +1,30 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
-        <meta charset="UTF-8">
-        <title>NETWORKING</title>
-       <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">--> 
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
-        <link rel="stylesheet" href="style.css" />
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-
-        <!--FIREBASE-->   
-
-    <script src="https://www.gstatic.com/firebasejs/5.8.5/firebase.js"></script>
-    <script>
-      // Initialize Firebase
-      var config = {
-        apiKey: "AIzaSyDOvN36a9Ec3svVs5XpAwUF0gd9wBaVy7c",
-        authDomain: "social-network-f8e7a.firebaseapp.com",
-        databaseURL: "https://social-network-f8e7a.firebaseio.com",
-        projectId: "social-network-f8e7a",
-        storageBucket: "social-network-f8e7a.appspot.com",
-        messagingSenderId: "454382512914"
-      };
-      firebase.initializeApp(config);
-    </script>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Login</title>
+    
+<script src="https://www.gstatic.com/firebasejs/5.8.6/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyBQ93B0Zt-c_OWKJT7XwcQ07fttIY4xL1s",
+    authDomain: "networkingsn-23c30.firebaseapp.com",
+    databaseURL: "https://networkingsn-23c30.firebaseio.com",
+    projectId: "networkingsn-23c30",
+    storageBucket: "networkingsn-23c30.appspot.com",
+    messagingSenderId: "689167083072"
+  };
+  firebase.initializeApp(config);
+</script>
 </head>
+<body>
+   <input id="email" type="email" placeholder="Ingresa email">
+<input id ="password" type="password"  placeholder="Genera tu contraseña">
+<button id ="send">enviar</button>
 
-
-
-
-
-<body class="back2">
-  
-
-
-      
-
-       
-        <p>
-         <label class="lab" >Email</label>
-         <br>
-        <input class= "input" id="email-ac" type ="email" ></p>
-        <p>
-        <label class="lab">Password</label>
-        <br>
-        <input  class= "input" id="pass-ac" type ="password" ></p>
-      
-   
-         <button id="access">Entrar</button>
-
-
-
-
- <div style="width:100%">
-        <div class="line">&nbsp;</div>
-        <div class="leyend">O conectate con</div>
-        <div class="line">&nbsp;</div>
-        
-    </div>
-    
-
-   
-            <button id="btnF">Facebook</button>
-            <button id="btnG">Google</button>
-           
-
-       
-        
-
-
-
-    <section id="user-data">
-      
-<!--  <button id="logout">Cerrar Sesión</button>-->
-
-    </section>
-
-  
-    
-
-
-    <script src="data.js"></script>
-    <script src="main.js"></script>
-    
+   <script> src = "app.js"</script> 
 </body>
-
-
-
 </html>
