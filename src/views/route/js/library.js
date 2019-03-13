@@ -1,9 +1,15 @@
 (function (window,document) {
+
+
+
+
+
   var first = function () {
     var element = null,
       marco = null,
       routes = {},
       controler = {},
+      ctrlFirst = null,
 
       library = {
         getID: function (id) {
@@ -15,6 +21,10 @@
             e.preventDefault();
           }, false);
           return this;
+        },
+        newControler: function(name, ctrl){
+        controler [name] = {'controler': ctrl};
+
         },
         routes: function () {
           marco = element;
@@ -35,6 +45,9 @@
           destination = routes[hash];
           xhr = new XMLHttpRequest();
           if (destination && destination.page) {
+              if(destination.controler){
+               ctrlFirst = destination.controler
+              }
             xhr.addEventListener('load', function () {
               marco.innerHTML = this.responseText;
             }, false);
