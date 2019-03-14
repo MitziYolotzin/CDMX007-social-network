@@ -12,9 +12,36 @@ const buttonLogin = document.getElementById('login');
 //});
 
 
+<<<<<<< HEAD
+//REGISTRAR NUEVO USUARIO
+buttonRegister.addEventListener('click', () => {
+
+let email = document.getElementById('email').value;
+let pass = document.getElementById('pass').value;
+
+firebase.auth().createUserWithEmailAndPassword(email, pass).then((res)=>{
+  console.log(res)
+})
+.catch(function(error) {
+    // Handle Errors here.
+    var errorCode = error.code;
+    var errorMessage = error.message;
+    // ...
+
+  console.log(errorCode);
+  console.log(errorMessage);
+
+  });
+
+});
+
+//INICIAR SESION
+buttonAccess.addEventListener('click', () => {
+=======
 //FUNCION REGISTRAR USUARIO
 //FUNCION INGRESA USUARIO
 //buttonAccess.addEventListener('click', () => {
+>>>>>>> origin/master
 
     //let emailAc = document.getElementById('email-ac').value;
     //let passAc = document.getElementById('pass-ac').value;
@@ -61,7 +88,7 @@ const verify = () => {
     //verify();
 
 
-//SALIR
+//SALIR DE LA SESION
 const buttonLogout = document.getElementById('logout');
 
 const viewUserInfo = () => {
@@ -75,8 +102,7 @@ const viewUserInfo = () => {
 
     }
 
-    
-
+//FUNCION CERRAR SESION
 const closeSession = () => {
 
     firebase.auth().signOut()
