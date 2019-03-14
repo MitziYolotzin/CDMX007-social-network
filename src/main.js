@@ -1,3 +1,5 @@
+
+
 //REGISTRO
 const buttonRegister = document.getElementById('register');
 const buttonAccess = document.getElementById('access');
@@ -12,7 +14,7 @@ const buttonLogin = document.getElementById('login');
 //});
 
 
-<<<<<<< HEAD
+
 //REGISTRAR NUEVO USUARIO
 buttonRegister.addEventListener('click', () => {
 
@@ -37,11 +39,11 @@ firebase.auth().createUserWithEmailAndPassword(email, pass).then((res)=>{
 
 //INICIAR SESION
 buttonAccess.addEventListener('click', () => {
-=======
+
 //FUNCION REGISTRAR USUARIO
 //FUNCION INGRESA USUARIO
 //buttonAccess.addEventListener('click', () => {
->>>>>>> origin/master
+
 
     //let emailAc = document.getElementById('email-ac').value;
     //let passAc = document.getElementById('pass-ac').value;
