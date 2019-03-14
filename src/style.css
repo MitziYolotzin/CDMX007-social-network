@@ -1,3 +1,4 @@
+@media (min-width: 320px) and (max-width: 480px){
 .back1{
     background-image: url("./assets/background2.jpg");
     background-color: #085793;
@@ -17,7 +18,7 @@
     
 }
 
-#btn1{
+#register{
 
     font-family: 'Roboto Condensed', sans-serif;
     color: white;
@@ -28,7 +29,7 @@
    
 }
 
-#btn2, #register,#access {
+a, #register,#access {
 
     font-family: 'Roboto Condensed', sans-serif;
     color: #085793;
@@ -39,6 +40,7 @@
     margin-bottom:80px;
     margin-top: 20px;
     
+}
 }
 
 /* REGISTER */
