@@ -1,38 +1,55 @@
 //REGISTRO
 const buttonRegister = document.getElementById('register');
+
+//INGRESO
 const buttonAccess = document.getElementById('access');
-const buttonLogin = document.getElementById('login');
 
  
-//buttonRegister.addEventListener('click', () => {
-//location.href= "register.html"
-//});
-//buttonLogin.addEventListener(click , () => {
-//location.href = "login.html"
-//});
 
 
 //FUNCION REGISTRAR USUARIO
-//FUNCION INGRESA USUARIO
-//buttonAccess.addEventListener('click', () => {
+buttonRegister.addEventListener('click', () => {
 
-    //let emailAc = document.getElementById('email-ac').value;
-    //let passAc = document.getElementById('pass-ac').value;
+let email = document.getElementById('email').value;
+let pass = document.getElementById('pass').value;
+
+firebase.auth().createUserWithEmailAndPassword(email, pass).then((res)=>{
+  console.log(res)
+})
+.catch(function(error) {
+    // Handle Errors here.
+    var errorCode = error.code;
+    var errorMessage = error.message;
+    // ...
+
+  console.log(errorCode);
+  console.log(errorMessage);
+
+  });
+
+});
+
+//FUNCION INGRESA USUARIO
+buttonAccess.addEventListener('click', () => {
+
+    let emailAc = document.getElementById('email-ac').value;
+    let passAc = document.getElementById('pass-ac').value;
     
-    //firebase.auth().signInWithEmailAndPassword(emailAc, passAc).then((res)=>{
-      //console.log(res);
-    //})
-    //.catch(function(error) {
+    firebase.auth().signInWithEmailAndPassword(emailAc, passAc).then((res)=>{
+      console.log(res);
+    })
+    .catch(function(error) {
+        // Handle Errors here.
+        var errorCode = error.code;
+        var errorMessage = error.message;
+        // ...
     
-      //var errorCode = error.code;
-      //var errorMessage = error.message;
+    console.log(errorCode);
+    console.log(errorMessage);
     
+      });
     
-    //console.log(errorCode);
-    //console.log(errorMessage);
-    
-    //});
-    
+    });
 
 //VERIFICAR USUARIO
 const verify = () => {
@@ -91,12 +108,4 @@ console.log('Cerrando sesión');
     } )
 }
 
-
-
-
-
-
-// function register() {
-//     console.log('mevoyaregistrar')
-// }
 
