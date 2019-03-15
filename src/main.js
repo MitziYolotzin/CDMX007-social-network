@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /* window de contraoladores 
 registro formulario toma valores de cada ConstantSourceNode
 : lleva base de datos 
@@ -18,11 +19,28 @@ window.social = {
 
 
   firebase: firebase.initializeApp(config),
+=======
+>>>>>>> cc13b74385ee9bf80aeab9585e7483c01ade8d3f
 
 
+//REGISTRO
+const buttonRegister = document.getElementById('register');
+const buttonAccess = document.getElementById('access');
+const buttonLogin = document.getElementById('login');
 
+<<<<<<< HEAD
 
   register: () => {
+=======
+ 
+//buttonRegister.addEventListener('click', () => {
+//location.href= "register.html"
+//});
+//buttonLogin.addEventListener(click , () => {
+//location.href = "login.html"
+//});
+
+>>>>>>> cc13b74385ee9bf80aeab9585e7483c01ade8d3f
 
     ///REGISTRO
     const buttonRegister = document.getElementById('register');
@@ -31,6 +49,7 @@ window.social = {
     //REGISTRAR NUEVO USUARIO
     buttonRegister.addEventListener('click', () => {
 
+<<<<<<< HEAD
       let email = document.getElementById('email').value;
       let pass = document.getElementById('pass').value;
 
@@ -40,6 +59,16 @@ window.social = {
         .then(function () {
           verifyEmail()
         })
+=======
+firebase.auth().createUserWithEmailAndPassword(email, pass).then((res)=>{
+  console.log(res)
+})
+.catch(function(error) {
+    // Handle Errors here.
+    var errorCode = error.code;
+    var errorMessage = error.message;
+    // ...
+>>>>>>> cc13b74385ee9bf80aeab9585e7483c01ade8d3f
 
         .catch(function (error) {
           // Handle Errors here.
@@ -52,6 +81,7 @@ window.social = {
 
         });
 
+<<<<<<< HEAD
     });
 
   },
@@ -73,11 +103,20 @@ window.social = {
 
 
 
+=======
+//INICIAR SESION
+buttonAccess.addEventListener('click', () => {
+
+//FUNCION REGISTRAR USUARIO
+//FUNCION INGRESA USUARIO
+//buttonAccess.addEventListener('click', () => {
+>>>>>>> cc13b74385ee9bf80aeab9585e7483c01ade8d3f
 
       firebase.auth().signInWithEmailAndPassword(emailAc, passAc)
         .then((res) => {
           location.replace('#/firstpage')
 
+<<<<<<< HEAD
           // console.log(res);
         })
         .catch(function (error) {
@@ -144,10 +183,70 @@ window.social = {
 
 
   },
+=======
+    //let emailAc = document.getElementById('email-ac').value;
+    //let passAc = document.getElementById('pass-ac').value;
+    
+    //firebase.auth().signInWithEmailAndPassword(emailAc, passAc).then((res)=>{
+      //console.log(res);
+    //})
+    //.catch(function(error) {
+    
+      //var errorCode = error.code;
+      //var errorMessage = error.message;
+    
+    
+    //console.log(errorCode);
+    //console.log(errorMessage);
+    
+    //});
+    
+>>>>>>> cc13b74385ee9bf80aeab9585e7483c01ade8d3f
 
+//VERIFICAR USUARIO
+const verify = () => {
 
+<<<<<<< HEAD
   closeSesion: () => {
+=======
+    firebase.auth().onAuthStateChanged(function(user) {
+        if (user) {
+            console.log('si existe usuario')
+            viewUserInfo(); 
+          // User is signed in.
+          var displayName = user.displayName;
+          var email = user.email;
+          var emailVerified = user.emailVerified;
+          var photoURL = user.photoURL;
+          var isAnonymous = user.isAnonymous;
+          var uid = user.uid;
+          var providerData = user.providerData;
+          // ...
+        } else {
+          // User is signed out.
+          // ...
+          console.log('no existe usuario')
+        }
+      });
+    }
+      
+    //verify();
 
+
+//SALIR DE LA SESION
+const buttonLogout = document.getElementById('logout');
+
+const viewUserInfo = () => {
+ let content = document.getElementById('user-data');
+
+ buttonLogout.addEventListener('click', () => {
+  closeSession();
+    content.innerHTML = `<p>Su sesión se ha cerrado</p>`;
+  
+  });
+>>>>>>> cc13b74385ee9bf80aeab9585e7483c01ade8d3f
+
+    }
 
     //FUNCION CERRAR SESION
     const closeSession = () => {
@@ -159,6 +258,7 @@ window.social = {
 
         })
 
+<<<<<<< HEAD
         .catch(function (error) {
           console.log(error);
         })
@@ -191,3 +291,19 @@ window.social = {
 
 
 }
+=======
+    .catch(function(error){
+     console.log(error);   
+    } )
+}
+
+
+
+
+
+
+// function register() {
+//     console.log('mevoyaregistrar')
+// }
+
+>>>>>>> cc13b74385ee9bf80aeab9585e7483c01ade8d3f
