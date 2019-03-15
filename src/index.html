@@ -2,80 +2,64 @@
 <html lang="en">
 
 <head>
-
-    <meta charset="UTF-8">
-    <title>NETWORKING</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-    <link rel="stylesheet" href="style.css" />
-    
-    <script src="https://www.gstatic.com/firebasejs/5.8.5/firebase.js"></script>
-    <script>
-      // Initialize Firebase
-      var config = {
-        apiKey: "AIzaSyDOvN36a9Ec3svVs5XpAwUF0gd9wBaVy7c",
-        authDomain: "social-network-f8e7a.firebaseapp.com",
-        databaseURL: "https://social-network-f8e7a.firebaseio.com",
-        projectId: "social-network-f8e7a",
-        storageBucket: "social-network-f8e7a.appspot.com",
-        messagingSenderId: "454382512914"
-      };
-    //   firebase.initializeApp(config);
-    </script>
-
-
-
-
-
-
+  <meta charset="UTF-8">
+  <title>NETWORKING</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+    crossorigin="anonymous">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
 
 </head>
 
-
 <body class="back1">
 
-    <h1>Link Up!</h1>
-    
-  <div id = "register_inputs" class="register_entry"></div>
+  <h1>Link Up!</h1>
 
-    <div class="down">
-<a href ="#/register">REGISTRARSE</button>
-   <a href ="#/login">INICIAR SESIÓN</a>
-    </div>
-    
-    <div id = "views"></div>
+  <div id="register_inputs" class="register_entry"></div>
 
-    <!--  
-    <h4>Registrarse-Sign Up</h4>
-    <input id="email" type ="email" placeholder="Ingresa email">
-    <input id="pass" type ="password" placeholder="Ingresa password">
-    <button id="register" onclick="register()">Enviar</button> 
-    <button id="register">Enviar</button>
+  <div class="down">
+    <button class="btnoo"><a href="#/register">REGISTRARSE </a></button>
+      <button class="btno"><a href="#/login">INICIAR SESIÓN </a></button>
+  </div>
 
-<h4>Iniciar Sesión-Sign In</h4>
-    <input id="email-ac" type ="email" placeholder="Ingresa email">
-    <input id="pass-ac" type ="password" placeholder="Ingresa password">
-    <button id="access">Acceso</button> -->
+  <div id="views"></div>
 
-    <section id="user-data">
+  <!--  
+        <h4>Registrarse-Sign Up</h4>
+        <input id="email" type ="email" placeholder="Ingresa email">
+        <input id="pass" type ="password" placeholder="Ingresa password">
+        <button id="register" onclick="register()">Enviar</button> 
+        <button id="register">Enviar</button>
+        
+        <h4>Iniciar Sesión-Sign In</h4>
+        <input id="email-ac" type ="email" placeholder="Ingresa email">
+        <input id="pass-ac" type ="password" placeholder="Ingresa password">
+        <button id="access">Acceso</button> -->
 
-
-
-    </section>
-
-    
-    
-    
-    
-    
+  <section id="user-data">
+  </section>
 
 
- <script src="main.js"></script>     
+  <script src="https://www.gstatic.com/firebasejs/5.8.5/firebase.js"></script>
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyDOvN36a9Ec3svVs5XpAwUF0gd9wBaVy7c",
+      authDomain: "social-network-f8e7a.firebaseapp.com",
+      databaseURL: "https://social-network-f8e7a.firebaseio.com",
+      projectId: "social-network-f8e7a",
+      storageBucket: "social-network-f8e7a.appspot.com",
+      messagingSenderId: "454382512914"
+    };
+    //   firebase.initializeApp(config);
+
+  </script>
+  <script src="main.js"></script>
   <script src="/src/views/route/js/library.js"></script>
   <script src="/src/views/route/js/routes.js"></script>
-  <script src = "/src/views/route/js/controlers/control.js"></script>
+  <script src="/src/views/route/js/controlers/control.js"></script>
 
 </body>
 
