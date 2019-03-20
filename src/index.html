@@ -9,9 +9,41 @@
 </head>
 <body>
   
+  <h4>Registrarse-Sign Up</h4>
+    <input id="email" type ="email" placeholder="Ingresa email">
+    <input id="pass" type ="password" placeholder="Ingresa password">
+    <!-- <button id="register" onclick="register()">Enviar</button> -->
+    <button id="register">Enviar</button>
+
+<h4>Iniciar Sesión-Sign In</h4>
+    <input id="email-ac" type ="email" placeholder="Ingresa email">
+    <input id="pass-ac" type ="password" placeholder="Ingresa password">
+    <button id="access">Acceso</button>
+
+    <section id="user-data">
+
+    </section>
+    
+    <button id="logout" onclick="closeSession()">Cerrar Sesión</button>
+
+  
 
 
 
-<script src="app.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/5.8.5/firebase.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyDOvN36a9Ec3svVs5XpAwUF0gd9wBaVy7c",
+        authDomain: "social-network-f8e7a.firebaseapp.com",
+        databaseURL: "https://social-network-f8e7a.firebaseio.com",
+        projectId: "social-network-f8e7a",
+        storageBucket: "social-network-f8e7a.appspot.com",
+        messagingSenderId: "454382512914"
+      };
+      firebase.initializeApp(config);
+    </script>
+<script src="main.js"></script>
 </body>
 </html>
