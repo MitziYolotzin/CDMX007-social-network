@@ -1,13 +1,21 @@
+
+
 //REGISTRO
 const buttonRegister = document.getElementById('register');
-
-//INGRESO
 const buttonAccess = document.getElementById('access');
+const buttonLogin = document.getElementById('login');
 
  
+//buttonRegister.addEventListener('click', () => {
+//location.href= "register.html"
+//});
+//buttonLogin.addEventListener(click , () => {
+//location.href = "login.html"
+//});
 
 
-//FUNCION REGISTRAR USUARIO
+
+//REGISTRAR NUEVO USUARIO
 buttonRegister.addEventListener('click', () => {
 
 let email = document.getElementById('email').value;
@@ -29,27 +37,31 @@ firebase.auth().createUserWithEmailAndPassword(email, pass).then((res)=>{
 
 });
 
-//FUNCION INGRESA USUARIO
+//INICIAR SESION
 buttonAccess.addEventListener('click', () => {
 
-    let emailAc = document.getElementById('email-ac').value;
-    let passAc = document.getElementById('pass-ac').value;
+//FUNCION REGISTRAR USUARIO
+//FUNCION INGRESA USUARIO
+//buttonAccess.addEventListener('click', () => {
+
+
+    //let emailAc = document.getElementById('email-ac').value;
+    //let passAc = document.getElementById('pass-ac').value;
     
-    firebase.auth().signInWithEmailAndPassword(emailAc, passAc).then((res)=>{
-      console.log(res);
-    })
-    .catch(function(error) {
-        // Handle Errors here.
-        var errorCode = error.code;
-        var errorMessage = error.message;
-        // ...
+    //firebase.auth().signInWithEmailAndPassword(emailAc, passAc).then((res)=>{
+      //console.log(res);
+    //})
+    //.catch(function(error) {
     
-    console.log(errorCode);
-    console.log(errorMessage);
+      //var errorCode = error.code;
+      //var errorMessage = error.message;
     
-      });
     
-    });
+    //console.log(errorCode);
+    //console.log(errorMessage);
+    
+    //});
+    
 
 //VERIFICAR USUARIO
 const verify = () => {
@@ -78,7 +90,7 @@ const verify = () => {
     //verify();
 
 
-//SALIR
+//SALIR DE LA SESION
 const buttonLogout = document.getElementById('logout');
 
 const viewUserInfo = () => {
@@ -92,8 +104,7 @@ const viewUserInfo = () => {
 
     }
 
-    
-
+//FUNCION CERRAR SESION
 const closeSession = () => {
 
     firebase.auth().signOut()
@@ -108,4 +119,12 @@ console.log('Cerrando sesión');
     } )
 }
 
+
+
+
+
+
+// function register() {
+//     console.log('mevoyaregistrar')
+// }
 
