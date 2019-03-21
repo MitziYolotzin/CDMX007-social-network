@@ -72,7 +72,7 @@ const verify = () => {
     verify();
     
     const accessToWall = () =>{
-      var content= document.getElementById('post-for-active-users');
+      let content= document.getElementById('post-for-active-users');
       content.innerHTML = window.wall.realTimeData();
      
      }
