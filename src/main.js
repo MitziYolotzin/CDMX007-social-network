@@ -88,7 +88,6 @@ const viewUserClose = (user) => {
  if (user.mailVerified){
 content.innerHTML = `
 <p>Bienvenido</p>
-
 `;
 }
 }
@@ -133,6 +132,8 @@ user.sendEmailVerification().then(function() {
 
 }
 
+
+///////AUTH GOOGLE
 
 
 
