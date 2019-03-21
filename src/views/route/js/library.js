@@ -46,6 +46,10 @@ var start= function(){
                 //  routes={ "/ create-contact":
                 //  {"frame":"views/Login.html"}
                 // }
+
+                // sirve para hacer llamadas de datos a un servidor 
+                // no es necesario  xhr=
+                
               xhr= new XMLHttpRequest();
 
               if (destination && destination.frame){
