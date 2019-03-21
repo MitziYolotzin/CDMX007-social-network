@@ -12,26 +12,16 @@ let email = document.getElementById('email').value;
 let pass = document.getElementById('pass').value;
 
 firebase.auth().createUserWithEmailAndPassword(email, pass)
-//.then((res)=>{ })
-  //console.log(res)
-  .then(function(){
-      verifyEmail()
-  }) 
-
 .catch(function(error) {
     // Handle Errors here.
     let errorCode = error.code;
     let errorMessage = error.message;
-    // ...
-
   console.log(errorCode);
   console.log(errorMessage);
 
   });
 
 });
-
-//INICIAR SESION
 buttonAccess.addEventListener('click', () => {
 
     let emailAc = document.getElementById('email-ac').value;
@@ -44,7 +34,7 @@ buttonAccess.addEventListener('click', () => {
         // Handle Errors here.
         let errorCode = error.code;
         let errorMessage = error.message;
-        // ...
+
     
     console.log(errorCode);
     console.log(errorMessage);
@@ -58,9 +48,14 @@ const verify = () => {
 
     firebase.auth().onAuthStateChanged(function(user) {
         if (user) {
+          accessToWall();
             console.log('si existe usuario activo')
             viewUser(user); 
+
+          // User is signed in.
+
           // User is signed in. const buttonLogout = document.getElementById('logout');
+
 
           let displayName = user.displayName;
           let email = user.email;
@@ -81,9 +76,21 @@ const verify = () => {
       
     verify();
 
+    
+    const accessToWall = () =>{
+      let content= document.getElementById('post-for-active-users');
+      content.innerHTML = window.wall.realTimeData();
+     
+     }
+
+//SALIR DE LA SESION
+const buttonLogout = document.getElementById('logout');
+
+
 //const buttonLogout = document.getElementById('logout');
 
 //Checar inicio LA SESION
+
 const viewUser = (user) => {
      let content = document.getElementById('user-data');
  if (user.mailVerified){
@@ -128,7 +135,7 @@ user.sendEmailVerification().then(function() {
   console.log(error);
 });
 
-
+ 
 }
 
 
