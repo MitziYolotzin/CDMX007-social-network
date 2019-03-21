@@ -73,11 +73,7 @@ const verify = () => {
     
     const accessToWall = () =>{
       var content= document.getElementById('post-for-active-users');
-      content.innerHTML = `
-      <input type="text" id="mssg" placeholder="Mensaje" class="form-control my-3">
-      <button class="btn btn-link" id="button-save" onclick="save()">Publicar</button>
-      
-      `
+      content.innerHTML = window.wall.realTimeData();
      
      }
 

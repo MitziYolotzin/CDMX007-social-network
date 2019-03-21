@@ -4,81 +4,84 @@
 let db = firebase.firestore();
 
 //let buttonSave = document.getElementById('button-save');
+window.wall = {
 
-const save = () => {
-  //function safe(){
-  //let name = document.getElementById('name').value;
-  let mssg = document.getElementById('mssg').value;
+  save: () => {
+    //function safe(){
+    //let name = document.getElementById('name').value;
+    let mssg = document.getElementById('mssg').value;
 
-  //Agregar datos
-  db.collection("users").add({
-          //first: name,
-          last: mssg
+    //Agregar datos
+    db.collection("users").add({
+        //first: name,
+        last: mssg
 
       })
       .then(function (docRef) {
-          console.log("Document written with ID: ", docRef.id);
-          //document.getElementById('name').value = '';
-          document.getElementById('mssg').value = '';
+        console.log("Document written with ID: ", docRef.id);
+        //document.getElementById('name').value = '';
+        document.getElementById('mssg').value = '';
       })
       .catch(function (error) {
-          console.error("Error adding document: ", error);
+        console.error("Error adding document: ", error);
       });
 
-}
+  },
 
-//Leer Datos RealTime
-let table = document.getElementById('post');
+  realTimeData: () => {
 
-db.collection("users").onSnapshot((querySnapshot) => {
-  table.innerHTML = "";
-  querySnapshot.forEach((doc) => {
-      console.log(`${doc.id} => ${doc.data().last}`);
-      table.innerHTML += ` 
+    let table = document.getElementById('post');
+
+    db.collection("users").onSnapshot((querySnapshot) => {
+      table.innerHTML = "";
+      querySnapshot.forEach((doc) => {
+        console.log(`${doc.id} => ${doc.data().last}`);
+        table.innerHTML += ` 
+            <input type="text" id="mssg" placeholder="Mensaje" class="form-control my-3">
+    <button class="btn btn-link" id="button-save" onclick="save()">Publicar</button>
+         <div class="card">
+        
+            <i class="material-icons">account_circle</i>
       
-   <div class="card">
-  
-      <i class="material-icons">account_circle</i>
-
-      <section id = "post">
-          
-          <p class="comment">${doc.data().last}</p> 
-      </section>
-
-          <section id ="buttons-wall">
-              <button class = "button-icon"><i class="material-icons" id="creating" onclick="editingData('${doc.id}','${doc.data().last}')" >create</i></button>
-              <button class = "button-icon"><i class="material-icons" onclick="deleteData('${doc.id}')">delete</i></button>
-          </section>    
-  </div>
-       `
-  });
-});
-
-//Borrar Datos
+            <section id = "post">
+                
+                <p class="comment">${doc.data().last}</p> 
+            </section>
+      
+                <section id ="buttons-wall">
+                    <button class = "button-icon"><i class="material-icons" id="creating" onclick="editingData('${doc.id}','${doc.data().last}')" >create</i></button>
+                    <button class = "button-icon"><i class="material-icons" onclick="deleteData('${doc.id}')">delete</i></button>
+                </section>    
+        </div>
+             `
+      });
+    });
+  },
 
 
-const deleteData = (id) => {
 
-          db.collection("users").doc(id).delete().then(function () {
-              console.log("Document successfully deleted!");
-          }).catch(function (error) {
-              console.error("Error removing document:", error);
-          });
-      };
+  deleteData: (id) => {
+
+    db.collection("users").doc(id).delete().then(function () {
+      console.log("Document successfully deleted!");
+    }).catch(function (error) {
+      console.error("Error removing document:", error);
+    });
+  },
 
 
 
 
-//Editar Datos
+  //Editar Datos
 
-const editingData = (id, mssg) => {
+  editingData: (id, mssg) => {
 
-  //document.getElementById('name').value = name;
-  document.getElementById('mssg').value = mssg;
-  let buttonEdit = document.getElementById('button-save');
-  buttonEdit.innerHTML = 'Editar';
+    //document.getElementById('name').value = name;
+    document.getElementById('mssg').value = mssg;
+    let buttonEdit = document.getElementById('button-save');
+    buttonEdit.innerHTML = 'Editar';
 
-  buttonEdit.onclick = () => {
+    buttonEdit.onclick = () => {
 
       let dataRef = db.collection("users").doc(id);
       // Set the field of id
@@ -87,37 +90,40 @@ const editingData = (id, mssg) => {
       let email = document.getElementById('mssg').value;
 
       return dataRef.update({
-              //first: name,
-              last: email
-          })
-          .then(function () {
-              console.log("Document successfully updated!");
-              buttonEdit.innerHTML = 'Guardar';
-              //document.getElementById('name').value = '';
-              document.getElementById('mssg').value = '';
-          })
-          .catch(function (error) {
-              // The document probably doesn't exist.
-              console.error("Error updating document: ", error);
-          });
+          //first: name,
+          last: email
+        })
+        .then(function () {
+          console.log("Document successfully updated!");
+          buttonEdit.innerHTML = 'Guardar';
+          //document.getElementById('name').value = '';
+          document.getElementById('mssg').value = '';
+        })
+        .catch(function (error) {
+          // The document probably doesn't exist.
+          console.error("Error updating document: ", error);
+        });
+
+    }
+
+  },
+
+  sidenav: () => {
+    document.addEventListener('DOMContentLoaded', () => {
+      var elements = document.querySelectorAll('.slider');
+      var instances = M.Slider.init(elements, {
+
+      });
+      var elements = document.querySelectorAll('.materialboxed');
+      var instances = M.Materialbox.init(elements);
+
+      var elements = document.querySelectorAll('.sidenav');
+      var instance = M.Sidenav.init(elements);
+
+    });
 
   }
 
+
+
 }
-
-//sidenav
-
-document.addEventListener('DOMContentLoaded', () => {
-  var elements = document.querySelectorAll('.slider');
-  var instances = M.Slider.init(elements, {
-
-  });
-  var elements = document.querySelectorAll('.materialboxed');
-  var instances = M.Materialbox.init(elements);
-
-  var elements = document.querySelectorAll('.sidenav');
-  var instance = M.Sidenav.init(elements);
-
-});
-
-
