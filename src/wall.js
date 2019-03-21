@@ -51,7 +51,7 @@ db.collection("users").onSnapshot((querySnapshot) => {
 
           <section id ="buttons-wall">
               <button class = "button-icon"><i class="material-icons" id="creating" onclick="editingData('${doc.id}','${doc.data().last}')" >create</i></button>
-              <button class = "button-icon"><i class="material-icons" id="deleting"('${doc.id}')>delete</i></button>
+              <button class = "button-icon"><i class="material-icons" id="deleting" onclick = "deleteData"('${doc.id}')>delete</i></button>
           </section>    
   </div>
        `
@@ -61,10 +61,8 @@ db.collection("users").onSnapshot((querySnapshot) => {
 //Borrar Datos
 
 
-const deleteData = () => {
-document.getElementById("deleting").addEventListener(click, ()=> {
-  var options = confirm ('¿Deseas borrar tu publicación?');
-  if (options == true){
+const deleteData = (id) => {
+
   
           db.collection("users").doc(id).delete().then(function () {
               console.log("Document successfully deleted!");
@@ -72,9 +70,7 @@ document.getElementById("deleting").addEventListener(click, ()=> {
               console.error("Error removing document:", error);
           });
       };
-})
 
-}
 
 
 
