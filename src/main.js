@@ -51,7 +51,12 @@ const verify = () => {
           accessToWall();
             console.log('si existe usuario activo')
             viewUser(user); 
+
           // User is signed in.
+
+          // User is signed in. const buttonLogout = document.getElementById('logout');
+
+
           let displayName = user.displayName;
           let email = user.email;
           console.log(user.emailVerified);
@@ -70,6 +75,7 @@ const verify = () => {
     }
       
     verify();
+
     
     const accessToWall = () =>{
       let content= document.getElementById('post-for-active-users');
@@ -79,13 +85,16 @@ const verify = () => {
 
 //SALIR DE LA SESION
 const buttonLogout = document.getElementById('logout');
+
+
+//const buttonLogout = document.getElementById('logout');
+
+//Checar inicio LA SESION
+
 const viewUser = (user) => {
      let content = document.getElementById('user-data');
  if (user.mailVerified){
-content.innerHTML = `
-<p>Bienvenido</p>
-
-`;
+content.innerHTML = `<p>Bienvenido, el usuario esta activo y puede ver esto</p>`;
 }
 }
 //  buttonLogout.addEventListener('click', () => {
@@ -129,6 +138,48 @@ user.sendEmailVerification().then(function() {
  
 }
 
+
+///Acceso Google
+
+const InGoogle = () => {
+    if (!firebase.auth().currentUser){
+
+        var provider = new firebase.auth.GoogleAuthProvider();
+        //provider.addScope('https://www.googleapis.com/auth/contacts.readonly');
+        provider.addScope('https://www.googleapis.com/auth/plus.login');
+
+        //firebase.auth().signInWithRedirect(provider);
+        firebase.auth().signInWithPopup(provider).then(function(result) {
+            // This gives you a Google Access Token. You can use it to access the Google API.
+            var token = result.credential.accessToken;
+            // The signed-in user info.
+            var user = result.user;
+            // ...
+            console.log(user);
+            
+          }).catch(function(error) {
+            // Handle Errors here.
+            var errorCode = error.code;
+            var errorMessage = error.message;
+            // The email of the user's account used.
+            var email = error.email;
+            // The firebase.auth.AuthCredential type that was used.
+            var credential = error.credential;
+            // ....
+            if(errorCode === 'auth/account-exists-with-different-credential'){
+            alert ('Es el mismo usuario');
+
+            }
+
+          });
+
+        } else {
+            firebase.auth().signOut();
+        }
+      
+    }
+
+  document.getElementById('in-google').addEventListener('click', InGoogle, false);
 
 
 
