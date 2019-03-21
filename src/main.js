@@ -12,26 +12,16 @@ let email = document.getElementById('email').value;
 let pass = document.getElementById('pass').value;
 
 firebase.auth().createUserWithEmailAndPassword(email, pass)
-//.then((res)=>{ })
-  //console.log(res)
-  .then(function(){
-      verifyEmail()
-  }) 
-
 .catch(function(error) {
     // Handle Errors here.
     let errorCode = error.code;
     let errorMessage = error.message;
-    // ...
-
   console.log(errorCode);
   console.log(errorMessage);
 
   });
 
 });
-
-//INICIAR SESION
 buttonAccess.addEventListener('click', () => {
 
     let emailAc = document.getElementById('email-ac').value;
@@ -44,7 +34,7 @@ buttonAccess.addEventListener('click', () => {
         // Handle Errors here.
         let errorCode = error.code;
         let errorMessage = error.message;
-        // ...
+
     
     console.log(errorCode);
     console.log(errorMessage);
@@ -58,6 +48,7 @@ const verify = () => {
 
     firebase.auth().onAuthStateChanged(function(user) {
         if (user) {
+          accessToWall();
             console.log('si existe usuario activo')
             viewUserClose(user); 
           // User is signed in.
@@ -79,7 +70,11 @@ const verify = () => {
     }
       
     verify();
-
+    
+    const accessToWall = () =>{
+      var content= document.getElementById('fake');
+      content.innerHTML = ('solo lo ve usuario activo'); 
+     }
 
 //SALIR DE LA SESION
 const buttonLogout = document.getElementById('logout');
@@ -130,7 +125,7 @@ user.sendEmailVerification().then(function() {
   console.log(error);
 });
 
-
+ 
 }
 
 
