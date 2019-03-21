@@ -1,13 +1,9 @@
 /////////////////MURO
 
-firebase.initializeApp({
-  apiKey: "AIzaSyBJNzQ3CWLsX34L9LxyR2UexqM4yuBvYM8",
-  authDomain: "usuarios-bc93b.firebaseapp.com",
-  projectId: "usuarios-bc93b"
-});
-
 // Initialize Cloud Firestore through Firebase
 let db = firebase.firestore();
+
+//let buttonSave = document.getElementById('button-save');
 
 const save = () => {
   //function safe(){
@@ -51,7 +47,7 @@ db.collection("users").onSnapshot((querySnapshot) => {
 
           <section id ="buttons-wall">
               <button class = "button-icon"><i class="material-icons" id="creating" onclick="editingData('${doc.id}','${doc.data().last}')" >create</i></button>
-              <button class = "button-icon"><i class="material-icons" id="deleting" onclick = "deleteData"('${doc.id}')>delete</i></button>
+              <button class = "button-icon"><i class="material-icons" onclick="deleteData('${doc.id}')">delete</i></button>
           </section>    
   </div>
        `
@@ -63,7 +59,6 @@ db.collection("users").onSnapshot((querySnapshot) => {
 
 const deleteData = (id) => {
 
-  
           db.collection("users").doc(id).delete().then(function () {
               console.log("Document successfully deleted!");
           }).catch(function (error) {
