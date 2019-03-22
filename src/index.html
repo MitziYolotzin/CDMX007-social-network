@@ -40,9 +40,9 @@
                         <img src="assets/images/backgroundlu2.png" alt="">
                       </div>
                       <a href="#">
-                        <img src="assets/images/photo-1496902526517-c0f2cb8fdb6a.jpg" alt="user" class="circle">
+                        <img src="assets/images/photo-1496902526517-c0f2cb8fdb6a.jpg" alt="user" class="circle" id="navPic">
                         <a href="">
-                          <span class="name-with-white-text">usuario apellido</span>
+                          <span id="name-with-white-text">usuario apellido</span>
                         </a> <br>
                         <a href="">
                           <span class="email-with-white-text">usuario@correo.com</span>
@@ -127,6 +127,8 @@
     
         
            <button id="register">Enviar</button>
+
+          
               
            <div class= "modal-footer">
                <a href="" class="btn modal-close">Cerrar</a>
@@ -162,13 +164,19 @@
 
  
   <section id="wall">
+    
     <section id="post"></section>
-    <section id="buttons-wall"></section>
+    <section id="buttons-wall">
+        <span class="likebtn-wrapper" data-identifier="likeButton1" datatheme="ugreen"></span>
+
+    </section>
+
+
   </section>
 
 
 
-
+  <script>(function(d,e,s){if(d.getElementById("likebtn_wjs"))return;a=d.createElement(e);m=d.getElementsByTagName(e)[0];a.async=1;a.id="likebtn_wjs";a.src=s;m.parentNode.insertBefore(a, m)})(document,"script","//w.likebtn.com/js/w/widget.js");</script>  
 
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
