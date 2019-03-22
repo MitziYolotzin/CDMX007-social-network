@@ -5,11 +5,11 @@ const buttonRegister = document.getElementById('register');
 const buttonAccess = document.getElementById('access');
 
 
-// //REGISTRO
-// const buttonRegister = document.getElementById('register');
-// const buttonAccess = document.getElementById('access');
-// const buttonLogin = document.getElementById('login');
+//REGISTRAR NUEVO USUARIO
+buttonRegister.addEventListener('click', () => {
 
+let email = document.getElementById('email').value;
+let pass = document.getElementById('pass').value;
 
 firebase.auth().createUserWithEmailAndPassword(email, pass)
 //.then((res)=>{ })
@@ -24,15 +24,19 @@ firebase.auth().createUserWithEmailAndPassword(email, pass)
     let errorMessage = error.message;
     // ...
 
-//     ///REGISTRO
-//     const buttonRegister = document.getElementById('register');
+  console.log(errorCode);
+  console.log(errorMessage);
+
+  });
+
+});
 
 
-//     //REGISTRAR NUEVO USUARIO
-//     buttonRegister.addEventListener('click', () => {
 
-//       let email = document.getElementById('email').value;
-//       let pass = document.getElementById('pass').value;
+
+
+//INICIAR SESION
+buttonAccess.addEventListener('click', () => {
 
     let emailAc = document.getElementById('email-ac').value;
     let passAc = document.getElementById('pass-ac').value;
@@ -53,13 +57,17 @@ firebase.auth().createUserWithEmailAndPassword(email, pass)
     
     });
 
-//     //FUNCION CERRAR SESION
-//     const closeSession = () => {
+//VERIFICAR USUARIO
+
+// el observador es una función que todo el tiempo esta escuchando si hay cambios o no dentro del sitio
+// si hay un usuario autenticado puedes hacer algo /sino te regresa a otra pág, al log in or register.
+
+const verify = () => {
 
     firebase.auth().onAuthStateChanged(function(user) {
         if (user) {
             console.log('si existe usuario activo')
-            viewUserClose(user); 
+            viewUser(user); 
           // User is signed in.
           let displayName = user.displayName;
           let email = user.email;
@@ -80,12 +88,21 @@ firebase.auth().createUserWithEmailAndPassword(email, pass)
       
     verify();
 
-//         .then(function () {
-//           console.log('Cerrando sesión');
+// Auth redirección Email
+
+    // ref.onAuth(function(data){
+    //   if(data){
+    //     console.log("el user esta autentificado")
+    //   }else {
+
+    //   }
+
+    // });
+
 
 //SALIR DE LA SESION
 const buttonLogout = document.getElementById('logout');
-const viewUserClose = (user) => {
+const viewUser = (user) => {
      let content = document.getElementById('user-data');
  if (user.mailVerified){
 content.innerHTML = `
@@ -104,13 +121,15 @@ content.innerHTML = `
 //   });
  
 
+//FUNCION CERRAR SESION
+const closeSession = () => {
 
-//   verifyEmail: () => {
+    firebase.auth().signOut()
 
-//     //Verificar Email
-//     const verifyEmail = () => {
+    .then(function(){
+console.log('Cerrando sesión');
 
-//       let user = firebase.auth().currentUser;
+    })
 
     .catch(function(error){
      console.log(error);   
@@ -134,11 +153,5 @@ user.sendEmailVerification().then(function() {
 }
 
 
-//     }
-
-
-//   },
-
-
-
+///////AUTH GOOGLE
 
