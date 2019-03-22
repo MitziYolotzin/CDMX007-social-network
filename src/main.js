@@ -11,6 +11,9 @@ buttonRegister.addEventListener('click', () => {
 let email = document.getElementById('email').value;
 let pass = document.getElementById('pass').value;
 
+alert("Verifica tu correo para que puedas iniciar sesión")
+
+
 firebase.auth().createUserWithEmailAndPassword(email, pass)
 .catch(function(error) {
     // Handle Errors here.
