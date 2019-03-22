@@ -48,9 +48,11 @@ db.collection("users").onSnapshot((querySnapshot) => {
           <section id ="buttons-wall">
               <button class = "button-icon"><i class="material-icons" id="creating" onclick="editingData('${doc.id}','${doc.data().last}')" >create</i></button>
               <button class = "button-icon"><i class="material-icons" onclick="deleteData('${doc.id}')">delete</i></button>
-          </section>    
+              <span class="likebtn-wrapper" data-identifier="item_1"></span>
+              </section>    
   </div>
        `
+       
   });
 });
 
