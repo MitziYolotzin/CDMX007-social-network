@@ -1,3 +1,9 @@
+//CONST USER
+const userName= document.getElementById("name-with-white-text");
+const userMail= document.getElementById("email-with-white-text");
+const userPic= document.getElementById("navPic");
+
+
 //REGISTRO
 const buttonRegister = document.getElementById('register');
 
@@ -61,7 +67,7 @@ const verify = () => {
 
     firebase.auth().onAuthStateChanged(function(user) {
         if (user) {
-          accessToWall();
+        accessToWall();
             console.log('si existe usuario activo')
             viewUser(user); 
           // User is signed in.
@@ -78,6 +84,10 @@ const verify = () => {
           let uid = user.uid;
           let providerData = user.providerData;
           // ...
+        } else if (user.photoURL===null){ 
+
+
+
         } else {
           // User is signed out.
           // ...
