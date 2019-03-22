@@ -61,10 +61,9 @@
       </li>
     </ul>
   </div>
-
+  <!--primer parte de log in-->
   <section class="container">
     <h1>Link up!</h1>
-    <div id="post-for-active-users"></div>
   </section>
 
   <h4>Iniciar Sesión-Sign In</h4>
@@ -74,54 +73,63 @@
   <button id="in-google">LogInGoogle</button>
 
   <section id="user-data"></section>
- <button id="logout" onclick="closeSession()">Cerrar Sesión</button>
+  <p>NO TIENES CUENTA <a href="#idModal" class="modal-trigger"> REGISTRATE</a></p>
+  <!--parte de log in-->
 
-  <div class="container-section">
+  <div id="wall-for-active-users">
+    <div class="container-section"></div>
+    <div id="post-for-active-users"></div>
 
-    <p>NO TIENES CUENTA <a href="#idModal" class="modal-trigger"> REGISTRATE</a></p>
-
-    <div id="idModal" class="modal">
-      <div class="modal-content">
-
-        <h4>Registrarse-Sign Up</h4>
-        <br>
-
-        <form action="#">
-
-          <div class="input-field">
-            <i class="material-icons prefix">person</i>
-            <input id="email" type="email" placeholder="Ingresa email">
-            <label for="name">Email</label>
-          </div>
-          <br>
-
-          <div class="input-field">
-            <i class="material-icons prefix">lock</i>
-            <input id="pass" type="password" placeholder="Ingresa password">
-            <label for="pass">Password</label>
-          </div>
-          <br>
-
-
-          <button id="register">Enviar</button>
-
-          <div class="modal-footer">
-            <a href="" class="btn modal-close">Cerrar</a>
-          </div>
-
-          <br>
-
-
-        </form>
-
-      </div>
-    </div>
+    <section id="wall">
+      <section id="post"></section>
+      <section id="buttons-wall"></section>
+    </section>
+    <button id="logout" onclick="closeSession()">Cerrar Sesión</button>
   </div>
 
 
+  <!--modal-->
+  <div id="idModal" class="modal">
+    <div class="modal-content">
+
+      <h4>Registrarse-Sign Up</h4>
+      <br>
+
+      <form action="#">
+
+        <div class="input-field">
+          <i class="material-icons prefix">person</i>
+          <input id="email" type="email" placeholder="Ingresa email">
+          <label for="name">Email</label>
+        </div>
+        <br>
+
+        <div class="input-field">
+          <i class="material-icons prefix">lock</i>
+          <input id="pass" type="password" placeholder="Ingresa password">
+          <label for="pass">Password</label>
+        </div>
+        <br>
+        <button id="register">Enviar</button>
+
+        <div class="modal-footer">
+          <a href="" class="btn modal-close">Cerrar</a>
+        </div>
+        <br>
+      </form>
+    </div>
 
 
-  <!-- <h4>Registrarse-Sign Up</h4>
+
+
+
+
+
+
+
+
+
+    <!-- <h4>Registrarse-Sign Up</h4>
  <input id="email" type ="email" placeholder="Ingresa email">
  <input id="pass" type ="password" placeholder="Ingresa password">
 // comentado <button id="register" onclick="register()">Enviar</button> 
@@ -138,27 +146,27 @@
 
 
 
-  <section id="wall">
-    <section id="post"></section>
-    <section id="buttons-wall"></section>
-  </section>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      var elems = document.querySelectorAll('.modal');
-      var instances = M.Modal.init(elems);
-    });
+    <section id="wall">
+      <section id="post"></section>
+      <section id="buttons-wall"></section>
+    </section>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        var elems = document.querySelectorAll('.modal');
+        var instances = M.Modal.init(elems);
+      });
 
-  </script>
+    </script>
 
-  <!-- Firestore -->
-  <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase-firestore.js"></script>
+    <!-- Firestore -->
+    <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase-firestore.js"></script>
 
-  <!-- <script src="https://www.gstatic.com/firebasejs/5.8.5/firebase.js"></script> -->
-  <script src="firebase.js"></script>
-  <script src="main.js"></script>
-  <script src="wall.js"></script>
+    <!-- <script src="https://www.gstatic.com/firebasejs/5.8.5/firebase.js"></script> -->
+    <script src="firebase.js"></script>
+    <script src="main.js"></script>
+    <script src="wall.js"></script>
 
 
 </body>
