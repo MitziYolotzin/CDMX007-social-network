@@ -32,20 +32,21 @@ window.wall = {
 
     let table = document.getElementById('post');
 
-    
+
 
     db.collection("users").onSnapshot((querySnapshot) => {
       table.innerHTML = "";
-      let contentTwo= document.getElementById('post-for-active-users');
-    contentTwo.innerHTML = 
-`<input type="text" id="mssg" placeholder="Mensaje" class="form-control my-3">
+      let contentTwo = document.getElementById('post-for-active-users');
+    
+      contentTwo.innerHTML =
+        `<input type="text" id="mssg" placeholder="Mensaje" class="form-control my-3">
 <button class="btn btn-link" id="button-save" onclick="window.wall.save()">Publicar</button>`
       querySnapshot.forEach((doc) => {
         console.log(`${doc.id} => ${doc.data().last}`);
 
-        
 
-        table.innerHTML +=  `
+
+        table.innerHTML += `
             
          <div class="card">
         
@@ -60,9 +61,10 @@ window.wall = {
                 <section id ="buttons-wall">
                     <button class = "button-icon"><i class="material-icons" id="creating" onclick="window.wall.editingData('${doc.id}','${doc.data().last}')" >create</i></button>
                     <button class = "button-icon"><i class="material-icons" onclick="window.wall.deleteData('${doc.id}')">delete</i></button>
+                    
                 </section>    
-        </div>
-             `
+        </div>`
+
       });
     });
   },
@@ -117,24 +119,22 @@ window.wall = {
 
   },
 
- 
+
 
 
 
 };
 
-    //sidenav
-    document.addEventListener('DOMContentLoaded', () => {
-      var elements = document.querySelectorAll('.slider');
-      var instances = M.Slider.init(elements, {
+//sidenav
+document.addEventListener('DOMContentLoaded', () => {
+  var elements = document.querySelectorAll('.slider');
+  var instances = M.Slider.init(elements, {
 
-      });
-      var elements = document.querySelectorAll('.materialboxed');
-      var instances = M.Materialbox.init(elements);
+  });
+  var elements = document.querySelectorAll('.materialboxed');
+  var instances = M.Materialbox.init(elements);
 
-      var elements = document.querySelectorAll('.sidenav');
-      var instance = M.Sidenav.init(elements);
+  var elements = document.querySelectorAll('.sidenav');
+  var instance = M.Sidenav.init(elements);
 
-    });
-
-  
+});

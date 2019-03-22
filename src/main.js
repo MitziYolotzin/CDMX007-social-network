@@ -76,6 +76,36 @@ const verify = () => {
       content.innerHTML = window.wall.realTimeData();
      
      }
+     //mostrar el perfil del usuario 
+
+const userProfile = () => {
+var user = user;
+var providerData = user.providerData[0].providerID; 
+
+if (user.emailVerified) 
+for (userInfo in providerData) {
+      switch (userInfo.providerID) {
+      case "facebook.com":
+          print("user is signed in with facebook")
+      case "google.com":
+          print("user is signed in with google")
+      case "github.com":
+      print("user is signed in with GitHub")
+      default:
+          print("user is signed in with \(userInfo.providerID)")
+      }
+  }
+  let userEmail = document.getElementById("email-of-the-user");
+  let userName = document.getElementById("name-of-the-user");
+  let userPhoto = document.getElementById("photo-of-the-user");
+   email = user.email;
+
+   userName.innerHTML = `<span>${user.displayName}</span>`
+   userEmail.innerHTML = `${email}`
+   userPhoto.innerHTML = `<img class="avatar" src = "${user.photoURL}">`
+}
+
+
 
 //SALIR DE LA SESION
 const buttonLogout = document.getElementById('logout');
