@@ -22,6 +22,12 @@ firebase.auth().createUserWithEmailAndPassword(email, pass)
   });
 
 });
+
+
+
+
+
+//INICIAR SESION
 buttonAccess.addEventListener('click', () => {
 
     let emailAc = document.getElementById('email-ac').value;
@@ -44,6 +50,10 @@ buttonAccess.addEventListener('click', () => {
     });
 
 //VERIFICAR USUARIO
+
+// el observador es una función que todo el tiempo esta escuchando si hay cambios o no dentro del sitio
+// si hay un usuario autenticado puedes hacer algo /sino te regresa a otra pág, al log in or register.
+
 const verify = () => {
 
     firebase.auth().onAuthStateChanged(function(user) {
@@ -51,7 +61,6 @@ const verify = () => {
           accessToWall();
             console.log('si existe usuario activo')
             viewUser(user); 
-
           // User is signed in.
 
           // User is signed in. const buttonLogout = document.getElementById('logout');

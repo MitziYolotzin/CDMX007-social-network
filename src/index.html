@@ -7,7 +7,10 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
   <link rel="stylesheet" type="text/css" media="screen" href="style.css">
+
+
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -17,13 +20,69 @@
   <title>LINK UP</title>
 </head>
 
+
+
+
 <body>
+
+
+
+        <div class="container-section">
+                <nav id="main-nav">
+                  <a href="#" class="sidenav-trigger" data-target="menu-side">
+                    <i class="material-icons" id="menu-side-nav">menu</i></a>
+                  </a>
+                </nav>
+                <ul class="sidenav" id="menu-side">
+                  <li>
+                    <div class="user-view">
+                      <div class="background">
+                        <img src="assets/images/backgroundlu2.png" alt="">
+                      </div>
+                      <a href="#">
+                        <img src="assets/images/photo-1496902526517-c0f2cb8fdb6a.jpg" alt="user" class="circle">
+                        <a href="">
+                          <span class="name-with-white-text">usuario apellido</span>
+                        </a> <br>
+                        <a href="">
+                          <span class="email-with-white-text">usuario@correo.com</span>
+                        </a>
+                      </a>
+                    </div>
+                  </li>
+                  <li>
+                    <a href="">
+                      <i class="material-icons">create</i>
+                      Editar perfil
+                    </a>
+                  </li>
+                  <li>
+                    <div class="divider"></div>
+                    <a href="">
+                      <i class="material-icons">card_membership</i>
+                      Lista de eventos
+                    </a>
+                  </li>
+                  <li>
+                    <a href="">
+                      <i class="material-icons">contact_mail</i>
+                      Lista de contactos
+                    </a>
+                  </li>
+                </ul>
+              </div>
+
+              <section class="container">
+                    <h1>Link up!</h1>
+                    <div id="post-for-active-users"></div>
+                    <!--<input type="text" id="name" placeholder="Nombre" class="form-control my-3">-->
+                    <!--<input type="text" id="mssg" placeholder="Mensaje" class="form-control my-3">-->
+                    <!--<button class="btn btn-link" id="button-save" onclick="save()">Publicar</button>-->
+                  </section>
+
+
   
-  <h4>Registrarse-Sign Up</h4>
-    <input id="email" type ="email" placeholder="Ingresa email">
-    <input id="pass" type ="password" placeholder="Ingresa password">
-    <!-- <button id="register" onclick="register()">Enviar</button> -->
-    <button id="register">Enviar</button>
+
 
 <h4>Iniciar Sesión-Sign In</h4>
     <input id="email-ac" type ="email" placeholder="Ingresa email">
@@ -36,60 +95,72 @@
     </section>
     
     <button id="logout" onclick="closeSession()">Cerrar Sesión</button>
+    
 
 
-  <div class="container-section">
-    <nav id="main-nav">
-      <a href="#" class="sidenav-trigger" data-target="menu-side">
-        <i class="material-icons" id="menu-side-nav">menu</i></a>
-      </a>
-    </nav>
-    <ul class="sidenav" id="menu-side">
-      <li>
-        <div class="user-view">
-          <div class="background">
-            <img src="assets/images/backgroundlu2.png" alt="">
+
+  <div class= "container section"> 
+     
+      <p>NO TIENES CUENTA  <a href="#idModal" class= "modal-trigger"> REGISTRATE</a></p>
+
+      <div id="idModal" class="modal">
+ <div class="modal-content">
+
+        <h4>Registrarse-Sign Up</h4>
+        <br>
+    
+        <form action="#">
+    
+          <div class="input-field">
+            <i class="material-icons prefix">person</i>
+            <input id="email" type ="email" placeholder="Ingresa email">
+           <label for="name">Email</label>
           </div>
-          <a href="#">
-            <img src="assets/images/photo-1496902526517-c0f2cb8fdb6a.jpg" alt="user" class="circle">
-            <a href="">
-              <span class="name-with-white-text">usuario apellido</span>
-            </a> <br>
-            <a href="">
-              <span class="email-with-white-text">usuario@correo.com</span>
-            </a>
-          </a>
-        </div>
-      </li>
-      <li>
-        <a href="">
-          <i class="material-icons">create</i>
-          Editar perfil
-        </a>
-      </li>
-      <li>
-        <div class="divider"></div>
-        <a href="">
-          <i class="material-icons">card_membership</i>
-          Lista de eventos
-        </a>
-      </li>
-      <li>
-        <a href="">
-          <i class="material-icons">contact_mail</i>
-          Lista de contactos
-        </a>
-      </li>
-    </ul>
+          <br>
+    
+          <div class="input-field">
+            <i class="material-icons prefix">lock</i>
+            <input id="pass" type ="password" placeholder="Ingresa password">
+            <label for="pass">Password</label>
+          </div>
+          <br>
+    
+        
+           <button id="register">Enviar</button>
+              
+           <div class= "modal-footer">
+               <a href="" class="btn modal-close">Cerrar</a>
+           </div>
+
+          <br>
+    
+          
+        </form>
+
+ </div>
+ </div>
   </div>
 
-  <section class="container">
-    <h1>Link up!</h1>
-    <div id="post-for-active-users"></div>
-    <!--<input type="text" id="name" placeholder="Nombre" class="form-control my-3">-->
-    <!--<input type="text" id="mssg" placeholder="Mensaje" class="form-control my-3">-->
-    <!--<button class="btn btn-link" id="button-save" onclick="save()">Publicar</button>-->
-  </section>
+
+    
+
+ <!-- <h4>Registrarse-Sign Up</h4>
+ <input id="email" type ="email" placeholder="Ingresa email">
+ <input id="pass" type ="password" placeholder="Ingresa password">
+// comentado <button id="register" onclick="register()">Enviar</button> 
+ <button id="register">Enviar</button> -->
+
+
+
+
+
+
+
+
+
+
+
+ 
   <section id="wall">
     <section id="post"></section>
     <section id="buttons-wall"></section>
@@ -101,6 +172,13 @@
 
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+ <script>
+      document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.modal');
+    var instances = M.Modal.init(elems);
+  });
+ </script>
+ 
   <!-- Firestore -->
   <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
   <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase-firestore.js"></script>
@@ -109,6 +187,7 @@
   <script src="firebase.js"></script>
   <script src="main.js"></script>
   <script src="wall.js"></script>
+
 
 </body>
 
