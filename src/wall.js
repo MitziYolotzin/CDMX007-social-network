@@ -1,5 +1,4 @@
-/////////////////MURO
-
+///////////////MURO
 // Initialize Cloud Firestore through Firebase
 let db = firebase.firestore();
 
@@ -37,7 +36,7 @@ window.wall = {
     db.collection("users").onSnapshot((querySnapshot) => {
       table.innerHTML = "";
       let contentTwo = document.getElementById('post-for-active-users');
-    
+
       contentTwo.innerHTML =
         `<input type="text" id="mssg" placeholder="Mensaje" class="form-control my-3">
 <button class="btn btn-link" id="button-save" onclick="window.wall.save()">Publicar</button>`
