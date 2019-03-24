@@ -92,9 +92,10 @@ window.wall = {
          <div class="card">
         
 
-            <img id="photoUser"class="user-photo" src= "${photoURL}" alt="user" >
+             <img id="photoUser" class="user-photo" src= "${photoURL}" alt="user"> 
+             <p id="nameUser">${displayName}</p> 
 
-            <p id="nameUser">${displayName}</p> 
+            
             <section id = "post">
                 
                 <p class="comment">${doc.data().last}</p> 
