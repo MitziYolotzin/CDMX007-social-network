@@ -10,6 +10,10 @@ const buttonRegister = document.getElementById('register');
 //INGRESO
 const buttonAccess = document.getElementById('access');
 
+//
+
+var user = firebase.auth().currentUser;
+
 
 //REGISTRAR NUEVO USUARIO
 buttonRegister.addEventListener('click', () => {
@@ -21,6 +25,10 @@ alert("Verifica tu correo para que puedas iniciar sesión")
 
 
 firebase.auth().createUserWithEmailAndPassword(email, pass)
+ .then(function(){
+ verifyEmail(user);
+ })
+  
 .catch(function(error) {
     // Handle Errors here.
     let errorCode = error.code;
@@ -75,10 +83,13 @@ const verify = () => {
 
     firebase.auth().onAuthStateChanged(function(user) {
         if (user) {
+          //verifyEmail();
 
-           accessToWall();
+         viewUser(user);
+
+          accessToWall();
             console.log('si existe usuario activo')
-            viewUser(user); 
+            
           // User is signed in.
 
           // User is signed in. const buttonLogout = document.getElementById('logout');
@@ -112,7 +123,7 @@ const verify = () => {
       });
     }
       
-    verify();
+  verify();
 
 
     const print= (user)=>{
@@ -133,22 +144,52 @@ const verify = () => {
     
     const accessToWall = () =>{
       let content= document.getElementById('post-for-active-users');
+      let contentInit = document.getElementById('init');
+      contentInit.innerHTML = "";
       content.innerHTML = window.wall.realTimeData();
-     
+      
      }
+
+
+     //Verificar Email
+const verifyEmail = () => {
+  let user = firebase.auth().currentUser;
+
+  user.sendEmailVerification().then(function() {
+    // Email sent.
+    console.log('Correo de verificación enviado');
+  }).catch(function(error) {
+    // An error happened.
+    console.log(error);
+  });
+  
+   
+  }
+
+
 
 //SALIR DE LA SESION
 const buttonLogout = document.getElementById('logout');
 
-
+//Boton refresca pag
+const cleaner = () => {
+  location.reload(true);
+  };
+  buttonLogout.addEventListener("click",cleaner); 
 //const buttonLogout = document.getElementById('logout');
 
 //Checar inicio LA SESION
 
 const viewUser = (user) => {
-     let content = document.getElementById('user-data');
- if (user.mailVerified){
-content.innerHTML = `<p>Bienvenido, el usuario esta activo y puede ver esto</p>`;
+     let contentM = document.getElementById('user-data');
+     var providerId = user.providerData[0].providerId;
+     let userImage = document.getElementById('user-image');
+     //verifyEmail();
+ if (user.mailVerified || providerId == "facebook.com" || providerId == "github.com"){
+     
+contentM.innerHTML = `<p>Bienvenid@</p>
+
+`;
 }
 }
 //  buttonLogout.addEventListener('click', () => {
@@ -176,21 +217,9 @@ console.log('Cerrando sesión');
     })
 }
 
-//Verificar Email
-const verifyEmail = () => {
 
-    let user = firebase.auth().currentUser;
 
-user.sendEmailVerification().then(function() {
-  // Email sent.
-  console.log('Correo de verificación enviado');
-}).catch(function(error) {
-  // An error happened.
-  console.log(error);
-});
 
- 
-}
 
 
 ///Acceso Google
@@ -236,8 +265,9 @@ const InGoogle = () => {
   document.getElementById('in-google').addEventListener('click', InGoogle, false);
 
 
-
-
-
-
-
+  const deleting = () => {
+    let press = confirm("¿seguro que deseas borrar?");
+    if (press == true) {
+    }
+    document.getElementById("comment").innerHTML;
+  }
