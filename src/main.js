@@ -2,6 +2,7 @@
 const buttonRegister = document.getElementById('register');
 //INGRESO
 const buttonAccess = document.getElementById('access');
+
 //REGISTRAR NUEVO USUARIO
 buttonRegister.addEventListener('click', () => {
 
@@ -79,16 +80,17 @@ const accessToWall = () => {
 }
 
 //mostrar el perfil del usuario 
-const userProfile = () => {
-  var user = user;
-  var providerData = user.providerData[0].providerID;
+const userProfile = (user) => {
+  var user = user.providerData;
+  
+
 
   if (user.emailVerified)
     for (userInfo in providerData) {
       switch (userInfo.providerID) {
         case "facebook.com":
           print("user is signed in with facebook")
-        case "google.com":
+        case InGoogle():
           print("user is signed in with google")
         case "github.com":
           print("user is signed in with GitHub")
@@ -103,7 +105,9 @@ const userProfile = () => {
 
   userName.innerHTML = `<span>${user.displayName}</span>`
   userEmail.innerHTML = `${email}`
+  console.log(email);
   userPhoto.innerHTML = `<img class="avatar" src = "${user.photoURL}">`
+ 
 }
 
 //SALIR DE LA SESION
@@ -188,3 +192,12 @@ const InGoogle = () => {
 }
 
 document.getElementById('in-google').addEventListener('click', InGoogle, false);
+
+//borrar posts 
+deleting =() => {
+  var press = confirm("¿deseas borrar todos tus comentarios?");
+  if (press == true) {
+    document.getElementById("comment").innerHTML;
+  }
+  
+};
