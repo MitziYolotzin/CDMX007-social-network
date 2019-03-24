@@ -8,6 +8,7 @@ body{
     background-size: cover;
     background-position: center;
     background-repeat:no-repeat;
+
     
 }
 
@@ -23,15 +24,16 @@ body{
 
 
 .line {
-    margin:0px 15px;
-    width:90px;    
+    margin:0px 25px;
+    width:95px;    
     border-top:1px solid white;
     position: relative;
     top:10px;
     float:left;
     }
 
-  .leyend {
+
+   .leyend {
     font-family: 'Open Sans', sans-serif;
     float:left;
     color: white;
@@ -102,13 +104,67 @@ body{
 
 }
 
-
+#linkModal,
 .fa-google:hover,
  .fa-facebook-f:hover,
  .fa-github-alt{
       color:whitesmoke;
 
     } 
+
+
+
+    #inputWall {
+    padding:10px 10px;
+    margin-top: 40px;
+    text-align: center;
+        
+    }   
+
+    #close, #logout {
+        padding:10px 10px;
+        margin-top: 20px;
+        text-align: center;
+        position: relative;
+        margin-left: 40%;
+        
+        }   
+
+
+
+    #logout {
+        padding:10px 10px;
+        margin-top: 20px;
+        text-align: center;
+        position: relative;
+        margin-left: 30%;
+        
+        }  
+
+ #mssg, #email-ac, #pass-ac{
+
+        color:whitesmoke;
+
+    }
+
+
+#linkModal{
+    font-family: 'Roboto Condensed';
+    color: white;
+    text-align: center;
+
+
+}
+
+
+.background{
+    padding-bottom: 30%;
+}
+
+#nameUser, #mailUser {
+    margin-left: 25px;
+
+}
 
 
 @media (min-width: 320px) and (max-width: 480px) {
@@ -153,7 +209,20 @@ body{
        
     }
   
-   
+    .line {
+        margin:0px 10px;
+        width:80px;    
+        border-top:1px solid white;
+        position: relative;
+        top:10px;
+        float:left;
+        }
+    
+      .leyend {
+        font-family: 'Open Sans', sans-serif;
+        float:left;
+        color: white;
+       }
 
 .footer {
     position: fixed;
