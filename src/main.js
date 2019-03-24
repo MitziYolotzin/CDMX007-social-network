@@ -195,9 +195,9 @@ document.getElementById('in-google').addEventListener('click', InGoogle, false);
 
 //borrar posts 
 deleting =() => {
-  var press = confirm("¿deseas borrar todos tus comentarios?");
+  var press = confirm("¿seguro que deseas borrar?");
   if (press == true) {
-    document.getElementById("comment").innerHTML;
   }
+  document.getElementById("comment").innerHTML;
   
 };
