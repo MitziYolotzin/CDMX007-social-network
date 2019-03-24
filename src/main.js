@@ -7,7 +7,7 @@ const buttonAccess = document.getElementById('access');
  
 
 
-//FUNCION REGISTRAR USUARIO
+///FUNCION REGISTRAR USUARIO
 buttonRegister.addEventListener('click', () => {
 
 let email = document.getElementById('email').value;
