@@ -43,14 +43,16 @@ window.wall = {
       querySnapshot.forEach((doc) => {
         console.log(`${doc.id} => ${doc.data().last}`);
 
-        
+        // <img id="photoUser"class="circle" src= "${user.photoURL}" alt="user">
+
 
         table.innerHTML +=  `
             
          <div class="card">
         
-            <i class="material-icons">account_circle</i>
-      
+            <img id="photoUser"class="user-photo" src= "${photoURL}" alt="user" >
+
+            <p id="nameUser">${displayName}</p> 
             <section id = "post">
                 
                 <p class="comment">${doc.data().last}</p> 
@@ -62,6 +64,7 @@ window.wall = {
 
                     <button class = "button-icon"><i class="material-icons" id="creating" onclick="window.wall.editingData('${doc.id}','${doc.data().last}')" >create</i></button>
                     <button class = "button-icon"><i class="material-icons" onclick="window.wall.deleteData('${doc.id}')">delete</i></button>
+                    <span class="likebtn-wrapper" data-identifier="likeButton1" datatheme="ugreen"></span>
 
                 </section>  
                 

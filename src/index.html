@@ -28,47 +28,77 @@
 
 
         <div class="container-section">
+
                 <nav id="main-nav">
                   <a href="#" class="sidenav-trigger" data-target="menu-side">
                     <i class="material-icons" id="menu-side-nav">menu</i></a>
                   </a>
                 </nav>
+
+
+
+
                 <ul class="sidenav" id="menu-side">
+
+
+                    
                   <li>
                     <div class="user-view">
+                      
                       <div class="background">
-                        <img src="assets/images/backgroundlu2.png" alt="">
+                        <!-- <img src="assets/images/backgroundlu2.png" alt=""> -->
                       </div>
-                      <a href="#">
-                        <img src="assets/images/photo-1496902526517-c0f2cb8fdb6a.jpg" alt="user" class="circle" id="navPic">
-                        <a href="">
-                          <span id="name-with-white-text">usuario apellido</span>
-                        </a> <br>
-                        <a href="">
-                          <span class="email-with-white-text">usuario@correo.com</span>
-                        </a>
-                      </a>
+
+
+                      <div id="photoUser" class="circle">
+                          <img src="assets/images/photo-1496902526517-c0f2cb8fdb6a.jpg">
+                        </div>
+
+                         <!-- <section > -->
+                            <!-- <img id="photoUser">  -->
+                            <!-- <img id="photoUser"src="assets/images/photo-1496902526517-c0f2cb8fdb6a.jpg"  class="circle" alt="user"> -->
+                         <!-- </section> -->
+
+                        <!-- <a href="#name"> <span class="name-with-white-text">usuario apellido</span></a> 
+                        <br>
+                        <a href="#mail"><span class="email-with-white-text">usuario@correo.com</span></a> -->
+                      <!-- </a> -->
                     </div>
+
+                    
+                  </li>
+
+                  
+                  <li>
+                    <!-- <a><i id="nameUser" class="material-icons">account_circle</i>Name</a> -->
+                    <p id="nameUser"></p>
                   </li>
                   <li>
-                    <a href="">
-                      <i class="material-icons">create</i>
-                      Editar perfil
-                    </a>
+                      <p id="mailUser"></p>
+                      <!-- <a><i id="mailUser" class="material-icons">email</i>email</a> -->
                   </li>
+
                   <li>
                     <div class="divider"></div>
-                    <a href="">
+                    <!-- <a href="">
                       <i class="material-icons">card_membership</i>
                       Lista de eventos
-                    </a>
+                    </a> -->
                   </li>
-                  <li>
-                    <a href="">
-                      <i class="material-icons">contact_mail</i>
-                      Lista de contactos
-                    </a>
-                  </li>
+
+                  <!-- <li>
+                      <a href="">
+                        <i class="material-icons">contact_mail</i>
+                        Lista de contactos
+                      </a>
+                    </li>  -->
+                      
+                      <button id="logout" onclick="closeSession()">Cerrar Sesión</button>
+                   
+                
+
+
+                  
                 </ul>
               </div>
 
@@ -94,7 +124,7 @@
 
     </section>
     
-    <button id="logout" onclick="closeSession()">Cerrar Sesión</button>
+  
     
 
 
@@ -167,7 +197,6 @@
     
     <section id="post"></section>
     <section id="buttons-wall">
-        <span class="likebtn-wrapper" data-identifier="likeButton1" datatheme="ugreen"></span>
 
     </section>
 
