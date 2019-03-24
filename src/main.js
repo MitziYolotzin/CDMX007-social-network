@@ -16,9 +16,10 @@ let email = document.getElementById('email').value;
 let pass = document.getElementById('pass').value;
 
 firebase.auth().createUserWithEmailAndPassword(email, pass)
-// .then((response)=>{
-// verifyEmail();
-// })
+ .then(function(){
+ verifyEmail(user);
+ })
+  
 .catch(function(error) {
     // Handle Errors here.
     let errorCode = error.code;
@@ -65,7 +66,7 @@ const verify = () => {
 
     firebase.auth().onAuthStateChanged(function(user) {
         if (user) {
-         // verifyEmail();
+          //verifyEmail();
 
          viewUser(user);
 
@@ -94,7 +95,7 @@ const verify = () => {
       });
     }
       
-    verify();
+  verify();
 
     
     const accessToWall = () =>{
@@ -103,10 +104,32 @@ const verify = () => {
      
      }
 
+
+     //Verificar Email
+const verifyEmail = () => {
+  let user = firebase.auth().currentUser;
+
+  user.sendEmailVerification().then(function() {
+    // Email sent.
+    console.log('Correo de verificación enviado');
+  }).catch(function(error) {
+    // An error happened.
+    console.log(error);
+  });
+  
+   
+  }
+
+
+
 //SALIR DE LA SESION
 const buttonLogout = document.getElementById('logout');
 
-
+//Boton refresca pag
+const cleaner = () => {
+  location.reload(true);
+  };
+  buttonLogout.addEventListener("click",cleaner); 
 //const buttonLogout = document.getElementById('logout');
 
 //Checar inicio LA SESION
@@ -114,13 +137,13 @@ const buttonLogout = document.getElementById('logout');
 const viewUser = (user) => {
      let content = document.getElementById('user-data');
      var providerId = user.providerData[0].providerId;
+     let userImage = document.getElementById('user-image');
      //verifyEmail();
  if (user.mailVerified || providerId == "facebook.com" || providerId == "github.com"){
      
 content.innerHTML = `<p>Bienvenid@</p>
-<img class="avatar" src="${user.photoURL}">
-`;
 
+`;
 }
 }
 //  buttonLogout.addEventListener('click', () => {
@@ -148,20 +171,9 @@ console.log('Cerrando sesión');
     })
 }
 
-//Verificar Email
-const verifyEmail = () => {
 
 
-user.sendEmailVerification().then(function() {
-  // Email sent.
-  console.log('Correo de verificación enviado');
-}).catch(function(error) {
-  // An error happened.
-  console.log(error);
-});
 
- 
-}
 
 
 ///Acceso Google
