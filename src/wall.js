@@ -50,14 +50,14 @@ window.wall = {
         console.log(`${doc.id} => ${doc.data().last}`);
 
         // <img id="photoUser"class="circle" src= "${user.photoURL}" alt="user">
-        if(user === null){
+        if(!user === null){
           
   
           table.innerHTML +=  `
             
           <div class="card">
          
-             <img id="photoUser"class="user-photo" src= "assets/images/photo-1496902526517-c0f2cb8fdb6a.jpg" alt="user" >
+             <img id="photoUser"class="user-photo" src= "./assets/images/logito.png" alt="user" >
  
              <p id="nameUser">User</p> 
              <section id = "post">

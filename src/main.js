@@ -120,7 +120,7 @@ const verify = () => {
         if(user.photoURL === null){
           nameUser.innerHTML=`<p>Bienvenid@</p>`
           mailUser.innerHTML=`<p>${user.email}</p>`
-          photoUser.innerHTML=`<img id="photoUser"class="circle" src= "assets/images/photo-1496902526517-c0f2cb8fdb6a.jpg" alt="user" >`
+          photoUser.innerHTML=`<img id="photoUser"class="circle" src= "./assets/images/logito.png" alt="user" >`
   
         } else {
           // User is signed out.
