@@ -54,7 +54,7 @@
 
 
                       <div id="photoUser" class="circle">
-                          <img src="./assets/images/logito.png" class="circle">
+                          <img  src="./assets/images/logito.png" class="circle">
                         </div>
 
                          <!-- <section > -->
@@ -110,7 +110,7 @@
 <section id="init">
 <!-- <h4>Iniciar Sesión</h4> -->
 
-
+ <section id="inputWall">
     <div class="input-field col s12" >
         <input id="email-ac" type ="email" placeholder="Ingresa email">
     </div>
@@ -120,35 +120,50 @@
         <input id="pass-ac" type ="password" placeholder="Ingresa password">
       </div>
 
+      
+
     <button id="access" class="btn">Iniciar sesión</button>
 
-    <div style="width:100%">
+    <div style="width:100%" class="input-field col s12">
       <div class="line">&nbsp;</div>
       <div class="leyend">O conectate con</div>
       <div class="line">&nbsp;</div>
     </div>
 
+  </section> 
+
+  <br>
+  <br>
+  <br>
+
+  
+  <div class="input-field col s12">
+
     <button class="btnG"id="in-google"><i class="fab fa-google"></i> Google</button>
+  
 
     <button  class="btnF" onclick = "facebookSignin()"><i class="fab fa-facebook-f"></i> Facebook</button>
+   
 <!-- <button onclick = "facebookSignout()">Facebook Signout</button> -->
 
 <button class="btnGh" onclick = "githubSignin()"><i class="fab fa-github-alt"></i> Github</button>
+
 <!-- <button onclick = "githubSignout()">Github Signout</button> -->
+</div>
+
 </section>    
+
 
     <section id="user-data">
 
     </section>
     
   
-    
-
-
+  
 
   <div class= "container section"> 
      
-      <p>¿NO TIENES CUENTA?<a href="#idModal" class= "modal-trigger"> REGISTRATE</a></p>
+      <p id ="linkModal">¿NO TIENES CUENTA?<a href="#idModal" class= "modal-trigger"> REGISTRATE</a></p>
 
       <div id="idModal" class="modal">
       <div class="modal-content">
@@ -177,8 +192,8 @@
 
 
 
-
- <a href="" class="btn modal-close">Cerrar</a>
+  
+ <a href="" class="btn modal-close" id="close">Cerrar</a>
 
  </div>
   </div>
