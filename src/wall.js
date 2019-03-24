@@ -1,7 +1,7 @@
 ///////////////MURO
 
 // Initialize Cloud Firestore through Firebase
-let db = firebase.firestore();
+var db = firebase.firestore();
 
 //let buttonSave = document.getElementById('button-save');
 window.wall = {
