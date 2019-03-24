@@ -35,7 +35,7 @@ firebase.auth().createUserWithEmailAndPassword(email, pass)
 
 
 
-//INICIAR SESION
+///INICIAR SESION
 buttonAccess.addEventListener('click', () => {
 
     let emailAc = document.getElementById('email-ac').value;
