@@ -9,12 +9,17 @@ window.wall = {
   save: () => {
     //function safe(){
     //let name = document.getElementById('name').value;
+    var user = firebase.auth().currentUser;
+    var providerId = user.providerData[0].providerId;
     let mssg = document.getElementById('mssg').value;
-
+    let displayName = user.displayName;
+    let photoURL = user.photoURL;
     //Agregar datos
     db.collection("users").add({
         //first: name,
-        last: mssg
+        last: mssg,
+        displayName: displayName,
+        photoURL: photoURL
 
       })
       .then(function (docRef) {
@@ -31,7 +36,8 @@ window.wall = {
   realTimeData: () => {
 
     let table = document.getElementById('post');
-
+    //let photoURL = user.photoURL;
+    
     
 
     db.collection("users").onSnapshot((querySnapshot) => {
@@ -63,7 +69,12 @@ window.wall = {
                 
 
                     <button class = "button-icon"><i class="material-icons" id="creating" onclick="window.wall.editingData('${doc.id}','${doc.data().last}')" >create</i></button>
-                    <button class = "button-icon"><i class="material-icons" onclick="window.wall.deleteData('${doc.id}')">delete</i></button>
+                   
+                    <button onclick="deleting()"<button class = "button-icon"><i class="material-icons" id= "button_deleting" onclick="window.wall.deleteData('${doc.id}')">delete</i></button></button>
+                
+                  
+                   </section>    
+                    
                     <span class="likebtn-wrapper" data-identifier="likeButton1" datatheme="ugreen"></span>
 
                 </section>  

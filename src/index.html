@@ -113,13 +113,20 @@
 
   
 
-
+<section id="init">
 <h4>Iniciar Sesión-Sign In</h4>
     <input id="email-ac" type ="email" placeholder="Ingresa email">
     <input id="pass-ac" type ="password" placeholder="Ingresa password">
     <button id="access">Acceso</button>
     <button id="in-google">LogInGoogle</button>
-    
+
+    <button onclick = "facebookSignin()">Facebook Signin</button>
+<!-- <button onclick = "facebookSignout()">Facebook Signout</button> -->
+
+<button onclick = "githubSignin()">Github Signin</button>
+<!-- <button onclick = "githubSignout()">Github Signout</button> -->
+</section>    
+
     <section id="user-data">
 
     </section>
@@ -131,7 +138,7 @@
 
   <div class= "container section"> 
      
-      <p>NO TIENES CUENTA  <a href="#idModal" class= "modal-trigger"> REGISTRATE</a></p>
+      <p>¿NO TIENES CUENTA?  <a href="#idModal" class= "modal-trigger"> REGISTRATE</a></p>
 
       <div id="idModal" class="modal">
  <div class="modal-content">
@@ -224,7 +231,8 @@
   <script src="firebase.js"></script>
   <script src="main.js"></script>
   <script src="wall.js"></script>
-
+  <script src="fbauth.js"></script>
+ <script src="gitauth.js"></script>
 
 </body>
 
