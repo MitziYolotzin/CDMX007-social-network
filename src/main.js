@@ -104,18 +104,6 @@ const verify = () => {
           uid = user.uid;
          providerData = user.providerData;
           
-          // ...
-        // } else if (photoURL=== null){ 
-        // `<img id="photoUser"class="circle" src= "${photoURL}" alt="user" >`
-        //   photoUser.innerHTML=`<img class="circle" src="assets/images/photo-1496902526517-c0f2cb8fdb6a.jpg"></img>`
-        //   
-        //   nameUser.innerHTML=`<p id="nameUser" href="#!"> <i class="material-icons"> account_circle </i> &nbsp ${user.displayName} </p></li>`
-        //   mailUser.innerHTML=`<p id="mailUser" href="#!" class="material-icons">email</i> &nbsp ${user.email} </li>`
-          
-        // } else {
-        //   photoUser.innerHTML=`<img class="circle" src="${user.photoURL}"></img>`
-        //   nameUser.innerHTML=`<i id="nameUser" href="#!" class="material-icons">account_circle</i> &nbsp ${user.displayName}</li>`
-        //   mailUser.innerHTML=`<i id="userMail" href="#!" class="material-icons">email</i> &nbsp ${user.email}</li>`
           
         if(user.photoURL === null){
           nameUser.innerHTML=`<p>Bienvenid@</p>`
@@ -205,9 +193,7 @@ const viewUser = (user) => {
      //verifyEmail();
  if (user.mailVerified || providerId == "facebook.com" || providerId == "github.com"){
      
-contentM.innerHTML = `<p>Bienvenid@</p>
-
-`;
+contentM.innerHTML = `<p></p>`;
 }
 }
 //  buttonLogout.addEventListener('click', () => {
