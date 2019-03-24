@@ -105,16 +105,7 @@ const verify = () => {
          providerData = user.providerData;
           
           // ...
-        // } else if (photoURL=== null){ 
-        //   photoUser.innerHTML=`<img class="circle" src="assets/images/photo-1496902526517-c0f2cb8fdb6a.jpg"></img>`
-        //   nameUser.innerHTML=`<p id="nameUser" href="#!"> <i class="material-icons"> account_circle </i> &nbsp ${user.displayName} </p></li>`
-        //   mailUser.innerHTML=`<p id="mailUser" href="#!" class="material-icons">email</i> &nbsp ${user.email} </li>`
-          
-        // } else {
-        //   photoUser.innerHTML=`<img class="circle" src="${user.photoURL}"></img>`
-        //   nameUser.innerHTML=`<i id="nameUser" href="#!" class="material-icons">account_circle</i> &nbsp ${user.displayName}</li>`
-        //   mailUser.innerHTML=`<i id="userMail" href="#!" class="material-icons">email</i> &nbsp ${user.email}</li>`
-          
+        
           
           // User is signed out.
           // ...
