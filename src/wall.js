@@ -14,6 +14,7 @@ window.wall = {
     let mssg = document.getElementById('mssg').value;
     let displayName = user.displayName;
     let photoURL = user.photoURL;
+    
     //Agregar datos
     db.collection("users").add({
         //first: name,
@@ -37,7 +38,7 @@ window.wall = {
 
     let table = document.getElementById('post');
     //let photoURL = user.photoURL;
-    
+   
     
 
     db.collection("users").onSnapshot((querySnapshot) => {
