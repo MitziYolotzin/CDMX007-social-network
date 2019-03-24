@@ -9,12 +9,17 @@ window.wall = {
   save: () => {
     //function safe(){
     //let name = document.getElementById('name').value;
+    var user = firebase.auth().currentUser;
+    var providerId = user.providerData[0].providerId;
     let mssg = document.getElementById('mssg').value;
-
+    let displayName = user.displayName;
+    let photoURL = user.photoURL;
     //Agregar datos
     db.collection("users").add({
         //first: name,
-        last: mssg
+        last: mssg,
+        displayName: displayName,
+        photoURL: photoURL
 
       })
       .then(function (docRef) {
@@ -48,9 +53,9 @@ window.wall = {
         table.innerHTML +=  `
             
          <div class="card">
-        
+         
             <i class="material-icons">account_circle</i>
-      
+            <p class="display">${doc.data().displayName}</p>
             <section id = "post">
                 
                 <p class="comment">${doc.data().last}</p> 

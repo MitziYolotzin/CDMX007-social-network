@@ -4,6 +4,10 @@ const buttonRegister = document.getElementById('register');
 //INGRESO
 const buttonAccess = document.getElementById('access');
 
+//
+
+var user = firebase.auth().currentUser;
+
 
 //REGISTRAR NUEVO USUARIO
 buttonRegister.addEventListener('click', () => {
@@ -12,6 +16,9 @@ let email = document.getElementById('email').value;
 let pass = document.getElementById('pass').value;
 
 firebase.auth().createUserWithEmailAndPassword(email, pass)
+// .then((response)=>{
+// verifyEmail();
+// })
 .catch(function(error) {
     // Handle Errors here.
     let errorCode = error.code;
@@ -58,9 +65,13 @@ const verify = () => {
 
     firebase.auth().onAuthStateChanged(function(user) {
         if (user) {
+         // verifyEmail();
+
+         viewUser(user);
+
           accessToWall();
             console.log('si existe usuario activo')
-            viewUser(user); 
+            
           // User is signed in.
 
           // User is signed in. const buttonLogout = document.getElementById('logout');
@@ -102,8 +113,14 @@ const buttonLogout = document.getElementById('logout');
 
 const viewUser = (user) => {
      let content = document.getElementById('user-data');
- if (user.mailVerified){
-content.innerHTML = `<p>Bienvenido, el usuario esta activo y puede ver esto</p>`;
+     var providerId = user.providerData[0].providerId;
+     //verifyEmail();
+ if (user.mailVerified || providerId == "facebook.com" || providerId == "github.com"){
+     
+content.innerHTML = `<p>Bienvenid@</p>
+<img class="avatar" src="${user.photoURL}">
+`;
+
 }
 }
 //  buttonLogout.addEventListener('click', () => {
@@ -134,7 +151,6 @@ console.log('Cerrando sesión');
 //Verificar Email
 const verifyEmail = () => {
 
-    let user = firebase.auth().currentUser;
 
 user.sendEmailVerification().then(function() {
   // Email sent.
