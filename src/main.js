@@ -100,7 +100,10 @@ const verify = () => {
     
     const accessToWall = () =>{
       let content= document.getElementById('post-for-active-users');
+      let contentInit = document.getElementById('init');
+      contentInit.innerHTML = "";
       content.innerHTML = window.wall.realTimeData();
+      
      
      }
 
@@ -135,13 +138,13 @@ const cleaner = () => {
 //Checar inicio LA SESION
 
 const viewUser = (user) => {
-     let content = document.getElementById('user-data');
+     let contentM = document.getElementById('user-data');
      var providerId = user.providerData[0].providerId;
      let userImage = document.getElementById('user-image');
      //verifyEmail();
  if (user.mailVerified || providerId == "facebook.com" || providerId == "github.com"){
      
-content.innerHTML = `<p>Bienvenid@</p>
+contentM.innerHTML = `<p>Bienvenid@</p>
 
 `;
 }
