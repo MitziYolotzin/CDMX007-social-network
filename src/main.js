@@ -1,7 +1,7 @@
 //CONST USER
-const userName= document.getElementById("name-with-white-text");
-const userMail= document.getElementById("email-with-white-text");
-const userPic= document.getElementById("navPic");
+const photoUser= document.getElementById("photoUser");
+const nameUser= document.getElementById("nameUser");
+const mailUser= document.getElementById("mailUser");
 
 
 //REGISTRO
@@ -63,40 +63,81 @@ buttonAccess.addEventListener('click', () => {
 // el observador es una función que todo el tiempo esta escuchando si hay cambios o no dentro del sitio
 // si hay un usuario autenticado puedes hacer algo /sino te regresa a otra pág, al log in or register.
 
+
+
+
+          
+
+
 const verify = () => {
+
+  
 
     firebase.auth().onAuthStateChanged(function(user) {
         if (user) {
-        accessToWall();
+
+           accessToWall();
             console.log('si existe usuario activo')
             viewUser(user); 
           // User is signed in.
 
           // User is signed in. const buttonLogout = document.getElementById('logout');
+         
 
-
-          let displayName = user.displayName;
-          let email = user.email;
+          displayName = user.displayName;
+          email = user.email;
           console.log(user.emailVerified);
-          let emailVerified = user.emailVerified;
-          let photoURL = user.photoURL;
-          let isAnonymous = user.isAnonymous;
-          let uid = user.uid;
-          let providerData = user.providerData;
+          emailVerified = user.emailVerified;
+          photoURL = user.photoURL;
+          isAnonymous = user.isAnonymous;
+          uid = user.uid;
+         providerData = user.providerData;
+          
           // ...
-        } else if (user.photoURL===null){ 
-
-
-
-        } else {
+        // } else if (photoURL=== null){ 
+        //   photoUser.innerHTML=`<img class="circle" src="assets/images/photo-1496902526517-c0f2cb8fdb6a.jpg"></img>`
+        //   nameUser.innerHTML=`<p id="nameUser" href="#!"> <i class="material-icons"> account_circle </i> &nbsp ${user.displayName} </p></li>`
+        //   mailUser.innerHTML=`<p id="mailUser" href="#!" class="material-icons">email</i> &nbsp ${user.email} </li>`
+          
+        // } else {
+        //   photoUser.innerHTML=`<img class="circle" src="${user.photoURL}"></img>`
+        //   nameUser.innerHTML=`<i id="nameUser" href="#!" class="material-icons">account_circle</i> &nbsp ${user.displayName}</li>`
+        //   mailUser.innerHTML=`<i id="userMail" href="#!" class="material-icons">email</i> &nbsp ${user.email}</li>`
+          
+          
           // User is signed out.
           // ...
+
+          print(user);
           console.log('no existe usuario activo')
+
+
+      
+    } else {
+      uid = null;
+    //   // window.location.replace('index.html');
+ 
         }
       });
     }
       
     verify();
+
+
+    const print= (user)=>{
+     
+      nameUser.innerHTML=`<p>${user.displayName}</p>`
+      mailUser.innerHTML=`<p>${user.email}</p>`
+      photoUser.innerHTML=`<img id="photoUser"class="circle" src= "${photoURL}" alt="user" >`
+
+      // photoUser.innerHTML=`<img class="circle" src="${photoURL}"></img>`
+      // nameUser.innerHTML=`<i id="nameUser" href="#!" class="material-icons">account_circle</i> &nbsp ${displayName}</li>`
+      // mailUser.innerHTML=`<i id="userMail" href="#!" class="material-icons">email</i> &nbsp ${email}</li>`
+          
+
+    
+      console.log(photoUser);
+    };
 
     
     const accessToWall = () =>{
