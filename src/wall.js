@@ -64,7 +64,6 @@ window.wall = {
 
                     <button class = "button-icon"><i class="material-icons" id="creating" onclick="window.wall.editingData('${doc.id}','${doc.data().last}')" >create</i></button>
                     <button class = "button-icon"><i class="material-icons" onclick="window.wall.deleteData('${doc.id}')">delete</i></button>
-                    <span class="likebtn-wrapper" data-identifier="likeButton1" datatheme="ugreen"></span>
 
                 </section>  
                 
