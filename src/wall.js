@@ -50,7 +50,37 @@ window.wall = {
         console.log(`${doc.id} => ${doc.data().last}`);
 
         // <img id="photoUser"class="circle" src= "${user.photoURL}" alt="user">
+        if(user === null){
+          
+  
+          table.innerHTML +=  `
+            
+          <div class="card">
+         
+             <img id="photoUser"class="user-photo" src= "assets/images/photo-1496902526517-c0f2cb8fdb6a.jpg" alt="user" >
+ 
+             <p id="nameUser">User</p> 
+             <section id = "post">
+                 
+                 <p class="comment">${doc.data().last}</p> 
+ 
+             </section>
+       
+                 <section id ="buttons-wall">
+                 
+ 
+                     <button class = "button-icon"><i class="material-icons" id="creating" onclick="window.wall.editingData('${doc.id}','${doc.data().last}')" >create</i></button>
+                    
+                     <button onclick="deleting()"<button class = "button-icon"><i class="material-icons" id= "button_deleting" onclick="window.wall.deleteData('${doc.id}')">delete</i></button></button>
+                 
+                 
+                     <span class="likebtn-wrapper" data-identifier="likeButton1" datatheme="ugreen"></span>
+ 
+                 </section>  
+                 
+         </div>`
 
+        } else {
 
         table.innerHTML +=  `
             
@@ -72,17 +102,13 @@ window.wall = {
                    
                     <button onclick="deleting()"<button class = "button-icon"><i class="material-icons" id= "button_deleting" onclick="window.wall.deleteData('${doc.id}')">delete</i></button></button>
                 
-                  
-                      
-                    
+                
                     <span class="likebtn-wrapper" data-identifier="likeButton1" datatheme="ugreen"></span>
 
                 </section>  
                 
-        </div>
-         
-        `
-        
+        </div>`
+        }
       });
     });
   },

@@ -121,8 +121,20 @@
    
 }
 
- 
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: rgb(23, 108, 206);
+    color: white;
+    text-align: center;
+ }
+ .id-logo{
+    width: 10%;
+    margin: 10px;
 
+ }
 
 .user-photo {
     max-width:25%;
