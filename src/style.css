@@ -1,16 +1,14 @@
 
-body{
 
-    background-image: url("./assets/images/backgroundlu2.png");
+body{ background-image: url("./assets/images/LinkUpBG.png");
     background-color: #085793;
     width: 100%;
-    height: -webkit-fill-available;   
     background-size: cover;
     background-position: center;
     background-repeat:no-repeat;
+  
 
-    
-}
+} 
 
 #logo {
     
@@ -18,7 +16,8 @@ body{
     position:relative;
     align-items: center;
     left: 24%;
-    top:40px;
+    top:45px;
+    margin-bottom:60px;
     
 }
 
@@ -79,6 +78,8 @@ body{
     border: 1.4px ;
     border-radius: 20px;
     padding: 10px 50px;
+    margin-bottom:5px;
+    margin-top: 10px;
 
 }
 
@@ -90,6 +91,8 @@ body{
     border: 1.4px;
     border-radius: 20px;
     padding: 10px 50px;
+    margin-bottom:5px;
+    margin-top: 10px;
 
 }
 
@@ -101,6 +104,8 @@ body{
     border: 1.4px;
     border-radius: 20px;
     padding: 10px 50px;
+    margin-bottom:5px;
+    margin-top: 10px;
 
 }
 
@@ -152,7 +157,17 @@ body{
     font-family: 'Roboto Condensed';
     color: white;
     text-align: center;
+    margin-bottom:40px;
+   
+    
 
+
+}
+
+#nameUser{
+    font-family:'Open Sans', 'sans-serif';
+    color:#3b5998;
+    font-size: 14px;
 
 }
 
@@ -161,10 +176,19 @@ body{
     padding-bottom: 30%;
 }
 
-#nameUser, #mailUser {
+#nameUser, #mailUser,.comment{
     margin-left: 25px;
 
 }
+
+#buttons-wall {
+
+margin-right:17px;
+   
+
+}
+
+
 
 
 @media (min-width: 320px) and (max-width: 480px) {
@@ -230,6 +254,9 @@ body{
 .user-photo {
     max-width:20%;
     border-radius:50%;
+    margin: 7px;
+    margin-left: 13px;
+    
     
 
 }
