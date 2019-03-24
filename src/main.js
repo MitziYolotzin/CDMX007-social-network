@@ -98,26 +98,39 @@ const verify = () => {
           displayName = user.displayName;
           email = user.email;
           console.log(user.emailVerified);
-          emailVerified = user.emailVerified;
+          let emailVerified = user.emailVerified;
           photoURL = user.photoURL;
           isAnonymous = user.isAnonymous;
           uid = user.uid;
          providerData = user.providerData;
           
           // ...
-        
+        // } else if (photoURL=== null){ 
+        // `<img id="photoUser"class="circle" src= "${photoURL}" alt="user" >`
+        //   photoUser.innerHTML=`<img class="circle" src="assets/images/photo-1496902526517-c0f2cb8fdb6a.jpg"></img>`
+        //   
+        //   nameUser.innerHTML=`<p id="nameUser" href="#!"> <i class="material-icons"> account_circle </i> &nbsp ${user.displayName} </p></li>`
+        //   mailUser.innerHTML=`<p id="mailUser" href="#!" class="material-icons">email</i> &nbsp ${user.email} </li>`
           
+        // } else {
+        //   photoUser.innerHTML=`<img class="circle" src="${user.photoURL}"></img>`
+        //   nameUser.innerHTML=`<i id="nameUser" href="#!" class="material-icons">account_circle</i> &nbsp ${user.displayName}</li>`
+        //   mailUser.innerHTML=`<i id="userMail" href="#!" class="material-icons">email</i> &nbsp ${user.email}</li>`
+          
+        if(user.photoURL === null){
+          nameUser.innerHTML=`<p>Bienvenid@</p>`
+          mailUser.innerHTML=`<p>${user.email}</p>`
+          photoUser.innerHTML=`<img id="photoUser"class="circle" src= "./assets/images/logito.png" alt="user" >`
+  
+        } else {
           // User is signed out.
-          // ...
-
+          
           print(user);
-          console.log('no existe usuario activo')
-
-
-      
-    } else {
+          
+    }
+   } else {
       uid = null;
-    //   // window.location.replace('index.html');
+      console.log('no existe usuario activo')
  
         }
       });
@@ -128,15 +141,20 @@ const verify = () => {
 
     const print= (user)=>{
      
+      if(user === null){
+        nameUser.innerHTML=`<p>Bienvenid@</p>`
+        mailUser.innerHTML=`<p>${user.email}</p>`
+        photoUser.innerHTML=`<img id="photoUser"class="circle" src= "assets/images/photo-1496902526517-c0f2cb8fdb6a.jpg" alt="user" >`
+
+      }
+    else { 
       nameUser.innerHTML=`<p>${user.displayName}</p>`
       mailUser.innerHTML=`<p>${user.email}</p>`
       photoUser.innerHTML=`<img id="photoUser"class="circle" src= "${photoURL}" alt="user" >`
-
-      // photoUser.innerHTML=`<img class="circle" src="${photoURL}"></img>`
-      // nameUser.innerHTML=`<i id="nameUser" href="#!" class="material-icons">account_circle</i> &nbsp ${displayName}</li>`
-      // mailUser.innerHTML=`<i id="userMail" href="#!" class="material-icons">email</i> &nbsp ${email}</li>`
+    } 
+      // photoUser.innerHTML=`<img class="c" src="${photoURL}"></img>`
           
-
+  
     
       console.log(photoUser);
     };
@@ -183,7 +201,7 @@ const cleaner = () => {
 const viewUser = (user) => {
      let contentM = document.getElementById('user-data');
      var providerId = user.providerData[0].providerId;
-     let userImage = document.getElementById('user-image');
+    // let userImage = document.getElementById('user-image');
      //verifyEmail();
  if (user.mailVerified || providerId == "facebook.com" || providerId == "github.com"){
      
