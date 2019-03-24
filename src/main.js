@@ -104,7 +104,6 @@ const verify = () => {
       contentInit.innerHTML = "";
       content.innerHTML = window.wall.realTimeData();
       
-     
      }
 
 
@@ -222,8 +221,9 @@ const InGoogle = () => {
   document.getElementById('in-google').addEventListener('click', InGoogle, false);
 
 
-
-
-
-
-
+  const deleting = () => {
+    let press = confirm("¿seguro que deseas borrar?");
+    if (press == true) {
+    }
+    document.getElementById("comment").innerHTML;
+  }

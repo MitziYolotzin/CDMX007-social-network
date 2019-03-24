@@ -36,7 +36,8 @@ window.wall = {
   realTimeData: () => {
 
     let table = document.getElementById('post');
-
+    //let photoURL = user.photoURL;
+    
     
 
     db.collection("users").onSnapshot((querySnapshot) => {
@@ -48,7 +49,7 @@ window.wall = {
       querySnapshot.forEach((doc) => {
         console.log(`${doc.id} => ${doc.data().last}`);
 
-        
+      
 
         table.innerHTML +=  `
             
@@ -64,8 +65,11 @@ window.wall = {
       
                 <section id ="buttons-wall">
                     <button class = "button-icon"><i class="material-icons" id="creating" onclick="window.wall.editingData('${doc.id}','${doc.data().last}')" >create</i></button>
-                    <button class = "button-icon"><i class="material-icons" onclick="window.wall.deleteData('${doc.id}')">delete</i></button>
-                </section>    
+                   
+                    <button onclick="deleting()"<button class = "button-icon"><i class="material-icons" id= "button_deleting" onclick="window.wall.deleteData('${doc.id}')">delete</i></button></button>
+                
+                  
+                   </section>    
         </div>
              `
       });
