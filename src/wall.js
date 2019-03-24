@@ -44,8 +44,12 @@ window.wall = {
       table.innerHTML = "";
       let contentTwo= document.getElementById('post-for-active-users');
     contentTwo.innerHTML = 
-`<input type="text" id="mssg" placeholder="Mensaje" class="form-control my-3">
-<button class="btn btn-link" id="button-save" onclick="window.wall.save()">Publicar</button>`
+`
+<section id="inputWall">
+<input type="text" id="mssg" placeholder="Mensaje" class="form-control my-3">
+<button class="btn btn-link" id="button-save" onclick="window.wall.save()">Publicar</button>
+</section>
+`
       querySnapshot.forEach((doc) => {
         console.log(`${doc.id} => ${doc.data().last}`);
 
@@ -56,6 +60,7 @@ window.wall = {
             
          <div class="card">
         
+
             <img id="photoUser"class="user-photo" src= "${photoURL}" alt="user" >
 
             <p id="nameUser">${displayName}</p> 
