@@ -1,4 +1,4 @@
-## Link de la app
+## Link de la app Mobile First
 [Networking Link Up](https://mitziyolotzin.github.io/CDMX007-social-network/src/index.html)
 
 
