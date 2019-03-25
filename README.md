@@ -11,8 +11,8 @@ Por lo que estos encuentros,  se convierten en momentos de gran valor para conta
 
 El inconveniente principal del networking social es que la mayoría de la gente no sabe como establecer contactos de forma eficaz. Como consecuencia, los pocos beneficios que obtienen de su actividad de networking no merecen el tiempo invertido en ello. La mejor manera de evitar decepcionarse en este sentido es decir una estrategia para usar los sitios sociales y ajustarse a ella. Por ejemplo, si va a usar Twitter para atraer la atención a nuevo contenido de su web, se puede mezclar la vida personal y causar confusión. 
 
-## Definición del producto
-Para acceder al proceso de la definición del producto y el proceso click en el siguiente link: [Documentos Link Up](https://docs.google.com/document/d/1vY4wfazftDGp3bQfZntluL-wmrxKk6sgeSghcdTGq_s/edit?usp=sharing).
+# Definición del producto
+Para acceder al proceso de la definición del producto, te invitamos a dar click en el siguiente link: [Documentos Link Up](https://docs.google.com/document/d/1vY4wfazftDGp3bQfZntluL-wmrxKk6sgeSghcdTGq_s/edit?usp=sharing).
 
 
 ## Prototipado
