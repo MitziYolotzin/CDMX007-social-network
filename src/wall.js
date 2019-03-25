@@ -64,7 +64,8 @@ window.wall = {
          
              <img id="photoUser"class="user-photo" src= "./assets/images/logito.png" alt="user" >
  
-             <p id="nameUser">User</p> 
+             <p id="nameUser">User</p>
+              
              <section id = "post">
                  
                  <p class="comment">${doc.data().last}</p> 
