@@ -1,3 +1,5 @@
+## Link de la app
+[Networking Link Up](https://mitziyolotzin.github.io/CDMX007-social-network/src/index.html)
 
 
 # Link up!
@@ -45,8 +47,7 @@ Mitzi Olvera <br>
 Daniela Sierra <br>
 Abygail Romero <br>
 
-## Link de la app
-[Networking Link Up](https://mitziyolotzin.github.io/CDMX007-social-network/src/index.html)
+
 
 
 #
@@ -82,7 +83,7 @@ Abygail Romero <br>
 * [ ✔] Permite hacer nuevas publicaciones.
 * [ ✔] Permite eliminar publicaciones.
 * [ ✔] Pide confirmación antes de borrar publicación.
-* [✔ ] Permite editar publicación en el mismo lugar (in place).
+
 
 
 
