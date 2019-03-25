@@ -1,36 +1,27 @@
 # Creando una Red Social
 
-## Preámbulo
+## Link up!
 
-Instagram, Snapchat, Twitter, Facebook, Twitch, Linkedin, etc. Las redes
-sociales han invadido nuestras vidas. Las amamos y/u odiamos, y muchos no podemos vivir sin ellas.
+El networking es una práctica común en el mundo empresarial y emprendedor. Es una palabra que ya se utiliza de forma cotidiana en el ámbito profesional y que hace referencia a eventos, tanto de tipo formal como informal, en los que puedes construir una red de contactos que te ayuden a generar oportunidades tanto de negocio como laborales.
 
-Hay redes sociales de todo tipo y para todo tipo de intereses. Por ejemplo,
-en una ronda de financiamiento con inversionistas, se presentó una red social
-para químicos en la que los usuarios podían publicar artículos sobre sus
-investigaciones, comentar en los artículos de sus colegas, y filtrar artículos
-de acuerdo a determinadas etiquetas o su popularidad, lo más reciente, o lo
-más comentado.
+por lo que estos encuentros,  se convierten en momentos de gran valor para contactar con personas con  intereses comunes.
 
-## Introducción
 
-Una emprendedora nos ha encargado crear una red social. No nos da mucho detalle
-sobre qué tipo de red social quiere, sólo nos dice que creemos la mejor que
-podamos, y que luego la convenzamos de lanzarla al mercado. Nos da ciertos temas
-en los que le gustaría invertir:
+## Motivación 
 
-* Alimentación
-* Feminismo
-* Educación
-* Salud
-* Energías Renovables
-
+El inconveniente principal del networking social es que la mayoría de la gente no sabe como establecer contactos de forma eficaz. Como consecuencia, los pocos beneficios que obtienen de su actividad de networking no merecen el tiempo invertido en ello. La mejor manera de evitar decepcionarse en este sentido es decir una estrategia para usar los sitios sociales y ajustarse a ella. Por ejemplo, si va a usar Twitter para atraer la atención a nuevo contenido de su web, se puede mezclar la vida personal y causar confusión. 
 
 ### Historias de usuario
+para acceder al proceso de la definición del producto y el poceso click [aquí](https://docs.google.com/document/d/1vY4wfazftDGp3bQfZntluL-wmrxKk6sgeSghcdTGq_s/edit?usp=sharing).
 
-Una vez que entiendas las necesidades de tu usuario, escribe las Historias de
-Usuario que representen todo lo que el usuario necesita hacer/ver. Asegúrate
-de incluir una definición de terminado (definition o done) para cada una.
+## Herramientas
+para este producto se utilizo HTML5, CSS junto con Materialize, boostrap y Vanilla Javascript. 
+
+## Roles
+como equipo participamos en todas las tareas necesarias para la realización del producto. <br>
+Mitzy Olvera <br>
+Daniela Sierra <br>
+Abygail Romero. <br>
 
 
 
@@ -43,8 +34,8 @@ de incluir una definición de terminado (definition o done) para cada una.
 ### `README.md`
 
 * [✔ ] Definición del producto
-* [ ] Resumen de entrevistas con usuarios.
-* [ ] Link/screenshots prototipo de baja fidelidad.
+* [ ✔} Resumen de entrevistas con usuarios.
+* [✔ ] Link/screenshots prototipo de baja fidelidad.
 * [ ] Conclusiones de pruebas con el producto en HTML.
 
 ### Pruebas / tests
@@ -58,7 +49,7 @@ de incluir una definición de terminado (definition o done) para cada una.
 * [ ✔] Permite crear cuenta.
 * [ ✔] Valida email.
 * [✔ ] Valida password.
-* [ ] Muestra mensajes de error.
+* [✔ ] Muestra mensajes de error.
 
 ### Inicio de sesión (sign in)
 
@@ -73,7 +64,7 @@ de incluir una definición de terminado (definition o done) para cada una.
 * [ ✔] Permite hacer nuevas publicaciones.
 * [ ✔] Permite eliminar publicaciones.
 * [ ✔] Pide confirmación antes de borrar publicación.
-* [ ] Permite editar publicación en el mismo lugar (in place).
+* [✔ ] Permite editar publicación en el mismo lugar (in place).
 * [ ] Permite filtrar publicaciones por público/privado.
 * [ ] Permite marcar publicaciones como _gustados_ (like, corazón, estrella,
   etc...).

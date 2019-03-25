@@ -1,4 +1,5 @@
 ///////////////MURO
+
 // Initialize Cloud Firestore through Firebase
 let db = firebase.firestore();
 
@@ -8,12 +9,17 @@ window.wall = {
   save: () => {
     //function safe(){
     //let name = document.getElementById('name').value;
+    var user = firebase.auth().currentUser;
+    var providerId = user.providerData[0].providerId;
     let mssg = document.getElementById('mssg').value;
-
+    let displayName = user.displayName;
+    let photoURL = user.photoURL;
     //Agregar datos
     db.collection("users").add({
         //first: name,
-        last: mssg
+        last: mssg,
+        displayName: displayName,
+        photoURL: photoURL
 
       })
       .then(function (docRef) {
@@ -30,60 +36,64 @@ window.wall = {
   realTimeData: () => {
 
     let table = document.getElementById('post');
-
-
+    //let photoURL = user.photoURL;
+    
+    
 
     db.collection("users").onSnapshot((querySnapshot) => {
       table.innerHTML = "";
-      let contentTwo = document.getElementById('post-for-active-users');
-
-      contentTwo.innerHTML =
-        `<input type="text" id="mssg" placeholder="Mensaje" class="form-control my-3">
+      let contentTwo= document.getElementById('post-for-active-users');
+    contentTwo.innerHTML = 
+`<input type="text" id="mssg" placeholder="Mensaje" class="form-control my-3">
 <button class="btn btn-link" id="button-save" onclick="window.wall.save()">Publicar</button>`
       querySnapshot.forEach((doc) => {
         console.log(`${doc.id} => ${doc.data().last}`);
 
+        // <img id="photoUser"class="circle" src= "${user.photoURL}" alt="user">
 
 
-        table.innerHTML += `
+        table.innerHTML +=  `
             
          <div class="card">
         
-            <i class="material-icons">account_circle</i>
-      
+            <img id="photoUser"class="user-photo" src= "${photoURL}" alt="user" >
+            <p id="nameUser">${displayName}</p> 
             <section id = "post">
                 
                 <p class="comment">${doc.data().last}</p> 
-
             </section>
       
                 <section id ="buttons-wall">
+                
                     <button class = "button-icon"><i class="material-icons" id="creating" onclick="window.wall.editingData('${doc.id}','${doc.data().last}')" >create</i></button>
+                   
                     <button onclick="deleting()"<button class = "button-icon"><i class="material-icons" id= "button_deleting" onclick="window.wall.deleteData('${doc.id}')">delete</i></button></button>
-                    </body>
-
-
-
- 
-        </div>`
-
+                
+                  
+                      
+                    
+                    <span class="likebtn-wrapper" data-identifier="likeButton1" datatheme="ugreen"></span>
+                </section>  
+                
+        </div>
+         
+        `
+        
       });
     });
   },
 
 
-  deleteData: (id) => {
-  
 
+
+  deleteData: (id) => {
 
     db.collection("users").doc(id).delete().then(function () {
-        console.log("Document successfully deleted!");
+      console.log("Document successfully deleted!");
     }).catch(function (error) {
-        console.error("Error removing document:", error);
+      console.error("Error removing document:", error);
     });
-},
-
-
+  },
 
 
 
@@ -124,22 +134,22 @@ window.wall = {
 
   },
 
-
+ 
 
 
 
 };
 
-//sidenav
-document.addEventListener('DOMContentLoaded', () => {
-  var elements = document.querySelectorAll('.slider');
-  var instances = M.Slider.init(elements, {
+    //sidenav
+    document.addEventListener('DOMContentLoaded', () => {
+      var elements = document.querySelectorAll('.slider');
+      var instances = M.Slider.init(elements, {
 
-  });
-  var elements = document.querySelectorAll('.materialboxed');
-  var instances = M.Materialbox.init(elements);
+      });
+      var elements = document.querySelectorAll('.materialboxed');
+      var instances = M.Materialbox.init(elements);
 
-  var elements = document.querySelectorAll('.sidenav');
-  var instance = M.Sidenav.init(elements);
+      var elements = document.querySelectorAll('.sidenav');
+      var instance = M.Sidenav.init(elements);
 
-});
+    });
