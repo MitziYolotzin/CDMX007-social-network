@@ -99,19 +99,16 @@ window.wall = {
             <section id = "post">
                 
                 <p class="comment">${doc.data().last}</p> 
-
             </section>
       
                 <section id ="buttons-wall">
                 
-
                     <button class = "button-icon"><i class="material-icons" id="creating" onclick="window.wall.editingData('${doc.id}','${doc.data().last}')" >create</i></button>
                    
                     <button onclick="deleting()"<button class = "button-icon"><i class="material-icons" id= "button_deleting" onclick="window.wall.deleteData('${doc.id}')">delete</i></button></button>
                 
                 
                     <span class="likebtn-wrapper" data-identifier="likeButton1" datatheme="ugreen"></span>
-
                 </section>  
                 
         </div>`
