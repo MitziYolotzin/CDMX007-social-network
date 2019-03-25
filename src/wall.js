@@ -1,7 +1,7 @@
 ///////////////MURO
 
 // Initialize Cloud Firestore through Firebase
-let db = firebase.firestore();
+var db = firebase.firestore();
 
 //let buttonSave = document.getElementById('button-save');
 window.wall = {
@@ -14,6 +14,7 @@ window.wall = {
     let mssg = document.getElementById('mssg').value;
     let displayName = user.displayName;
     let photoURL = user.photoURL;
+    
     //Agregar datos
     db.collection("users").add({
         //first: name,
@@ -37,27 +38,64 @@ window.wall = {
 
     let table = document.getElementById('post');
     //let photoURL = user.photoURL;
-    
+   
     
 
     db.collection("users").onSnapshot((querySnapshot) => {
       table.innerHTML = "";
       let contentTwo= document.getElementById('post-for-active-users');
     contentTwo.innerHTML = 
-`<input type="text" id="mssg" placeholder="Mensaje" class="form-control my-3">
-<button class="btn btn-link" id="button-save" onclick="window.wall.save()">Publicar</button>`
+`
+<section id="inputWall">
+<input type="text" id="mssg" placeholder="Mensaje" class="form-control my-3">
+<button class="btn btn-link" id="button-save" onclick="window.wall.save()">Publicar</button>
+</section>
+`
       querySnapshot.forEach((doc) => {
         console.log(`${doc.id} => ${doc.data().last}`);
 
-        // <img id="photoUser"class="circle" src= "${user.photoURL}" alt="user">
+        
+        if(!user === null){
+          
+  
+          table.innerHTML +=  `
+            
+          <div class="card">
+         
+             <img id="photoUser"class="user-photo" src= "./assets/images/logito.png" alt="user" >
+ 
+             <p id="nameUser">User</p> 
+             <section id = "post">
+                 
+                 <p class="comment">${doc.data().last}</p> 
+ 
+             </section>
+       
+                 <section id ="buttons-wall">
+                 
+ 
+                     <button class = "button-icon"><i class="material-icons" id="creating" onclick="window.wall.editingData('${doc.id}','${doc.data().last}')" >create</i></button>
+                    
+                     <button onclick="deleting()"<button class = "button-icon"><i class="material-icons" id= "button_deleting" onclick="window.wall.deleteData('${doc.id}')">delete</i></button></button>
+                 
+                 
+                     <span class="likebtn-wrapper" data-identifier="likeButton1" datatheme="ugreen"></span>
+ 
+                 </section>  
+                 
+         </div>`
 
+        } else {
 
         table.innerHTML +=  `
             
          <div class="card">
         
-            <img id="photoUser"class="user-photo" src= "${photoURL}" alt="user" >
-            <p id="nameUser">${displayName}</p> 
+
+             <img id="photoUser" class="user-photo" src= "${photoURL}" alt="user"> 
+             <p id="nameUser">${displayName}</p> 
+
+            
             <section id = "post">
                 
                 <p class="comment">${doc.data().last}</p> 
@@ -69,16 +107,12 @@ window.wall = {
                    
                     <button onclick="deleting()"<button class = "button-icon"><i class="material-icons" id= "button_deleting" onclick="window.wall.deleteData('${doc.id}')">delete</i></button></button>
                 
-                  
-                      
-                    
+                
                     <span class="likebtn-wrapper" data-identifier="likeButton1" datatheme="ugreen"></span>
                 </section>  
                 
-        </div>
-         
-        `
-        
+        </div>`
+        }
       });
     });
   },
@@ -153,3 +187,5 @@ window.wall = {
       var instance = M.Sidenav.init(elements);
 
     });
+
+  
